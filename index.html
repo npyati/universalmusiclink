@@ -9,34 +9,59 @@
   <meta property="og:description" content="One link. Every streaming service." />
   <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .home-card { gap: 16px; padding: 40px 32px; }
-    .home-title { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; }
-    .home-sub { color: var(--muted); font-size: 1rem; }
-    .track-links { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-    .track-link {
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px 14px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 8px; text-decoration: none; color: var(--text);
-      font-size: 0.9rem; font-weight: 500;
-      transition: background 0.15s, border-color 0.15s;
+    :root { --title-font: 'Syne', sans-serif; }
+
+    .home-title {
+      font-family: var(--title-font);
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin-bottom: 8px;
     }
-    .track-link:hover { background: #1e1e1e; border-color: #444; }
-    .track-link img { width: 44px; height: 44px; border-radius: 4px; object-fit: cover; }
-    .track-link-info { display: flex; flex-direction: column; }
-    .track-link-title { font-weight: 600; }
-    .track-link-artist { color: var(--muted); font-size: 0.8rem; }
+    .home-sub {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 24px;
+    }
+    .track-links { display: flex; flex-direction: column; gap: 1px; border: 1.5px solid var(--text); }
+    .track-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--bg);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.1s;
+    }
+    .track-link:last-child { border-bottom: none; }
+    .track-link:hover { background: var(--hover); }
+    .track-link img { width: 40px; height: 40px; object-fit: cover; flex-shrink: 0; }
+    .track-link-info { display: flex; flex-direction: column; gap: 2px; }
+    .track-link-title { font-weight: 600; font-size: 0.9rem; }
+    .track-link-artist { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.05em; }
   </style>
 </head>
 <body>
-  <div class="card home-card">
-    <div class="track-info">
-      <div class="home-title">Universal Music Link</div>
-      <div class="home-sub" style="margin-top:8px">One link. Every streaming service.</div>
-    </div>
-    <hr class="divider">
+  <div class="page">
+    <p class="home-sub">Universal Music Link</p>
+    <h1 class="home-title">One link.<br>Every service.</h1>
+    <hr class="rule">
     <div class="track-links">
       <a href="gorillaz-the-mountain/" class="track-link">
         <img src="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4" alt="The Mountain">
