@@ -1,12 +1,13 @@
 const PREF_KEY = 'uml_preferred_service';
 
-const SERVICE_COLORS = {
-  spotify:      { bg: '#1DB954', text: '#000' },
-  apple_music:  { bg: '#FC3C44', text: '#fff' },
-  youtube_music:{ bg: '#FF0000', text: '#fff' },
-  tidal:        { bg: '#00FFFF', text: '#000' },
-  amazon_music: { bg: '#00A8E0', text: '#fff' },
-  deezer:       { bg: '#FEAA2D', text: '#000' },
+// Simple Icons CDN slugs — https://simpleicons.org
+const SERVICE_ICONS = {
+  spotify:       'spotify',
+  apple_music:   'applemusic',
+  youtube_music: 'youtubemusic',
+  tidal:         'tidal',
+  amazon_music:  'amazonmusic',
+  deezer:        'deezer',
 };
 
 const SERVICE_LABELS = {
@@ -17,6 +18,11 @@ const SERVICE_LABELS = {
   amazon_music:  'Amazon Music',
   deezer:        'Deezer',
 };
+
+function icon(serviceId, size = 18) {
+  const slug = SERVICE_ICONS[serviceId];
+  return `<img src="https://cdn.simpleicons.org/${slug}/ffffff" width="${size}" height="${size}" alt="" aria-hidden="true" class="service-icon">`;
+}
 
 function getPreference() {
   return localStorage.getItem(PREF_KEY);
@@ -39,7 +45,6 @@ function renderServices() {
   const services = window.TRACK_SERVICES;
   const pref = getPreference();
 
-  // Filter to only services that exist in this track's data
   const available = Object.keys(services);
   const preferredService = pref && services[pref] ? pref : null;
   const others = available.filter(id => id !== preferredService);
@@ -47,14 +52,13 @@ function renderServices() {
   let html = '';
 
   if (preferredService) {
-    const color = SERVICE_COLORS[preferredService];
     const label = SERVICE_LABELS[preferredService];
     const url = services[preferredService];
     html += `
       <div class="preferred-section">
         <div class="preferred-label">Your preferred service</div>
-        <a href="${url}" class="btn-preferred" style="background:${color.bg};color:${color.text}" target="_blank" rel="noopener">
-          <span class="service-dot" style="background:${color.text};opacity:0.4"></span>
+        <a href="${url}" class="btn-preferred" target="_blank" rel="noopener">
+          ${icon(preferredService, 20)}
           Open in ${label}
         </a>
       </div>
@@ -64,13 +68,12 @@ function renderServices() {
         <div class="service-list">
     `;
     for (const id of others) {
-      const c = SERVICE_COLORS[id];
       const lbl = SERVICE_LABELS[id];
       const u = services[id];
       html += `
         <a href="${u}" class="btn-service" target="_blank" rel="noopener"
            onclick="handleServiceClick(event, '${id}')">
-          <span class="service-dot" style="background:${c.bg}"></span>
+          ${icon(id)}
           <span class="service-name">${lbl}</span>
           <span class="set-default-hint">set as default</span>
         </a>
@@ -86,17 +89,16 @@ function renderServices() {
   } else {
     html += `
       <div class="services-section">
-        <div class="services-label all-services-label">Listen on</div>
+        <div class="services-label">Listen on</div>
         <div class="service-list all-services">
     `;
     for (const id of available) {
-      const c = SERVICE_COLORS[id];
       const lbl = SERVICE_LABELS[id];
       const u = services[id];
       html += `
         <a href="${u}" class="btn-service" target="_blank" rel="noopener"
            onclick="handleServiceClick(event, '${id}')">
-          <span class="service-dot" style="background:${c.bg}"></span>
+          ${icon(id)}
           <span class="service-name">${lbl}</span>
           <span class="set-default-hint">set as default</span>
         </a>
@@ -113,11 +115,7 @@ function renderServices() {
 }
 
 function handleServiceClick(event, serviceId) {
-  // On desktop: clicking opens the link; shift+click or long-press sets default
-  // Simple UX: always open the link, set as default on next visit
-  // But also set as default now so next visit uses it
   setPreference(serviceId);
-  // Let the link navigate normally (don't prevent default)
 }
 
 document.addEventListener('DOMContentLoaded', renderServices);

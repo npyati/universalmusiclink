@@ -88,16 +88,19 @@ body {
   width: 100%;
   padding: 14px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #555;
+  background: #242424;
+  color: var(--text);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: filter 0.15s, transform 0.1s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
 }
 
 .btn-preferred:hover {
-  filter: brightness(1.1);
+  background: #2e2e2e;
+  border-color: #777;
   transform: translateY(-1px);
 }
 
@@ -151,11 +154,10 @@ body {
   background: #222;
 }
 
-.service-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.service-icon {
   flex-shrink: 0;
+  opacity: 0.85;
+  display: block;
 }
 
 .service-name { flex: 1; }
