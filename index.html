@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Music Link</title>
+
+  <meta property="og:title" content="Universal Music Link" />
+  <meta property="og:description" content="One link. Every streaming service." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .home-card { gap: 16px; padding: 40px 32px; }
+    .home-title { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; }
+    .home-sub { color: var(--muted); font-size: 1rem; }
+    .track-links { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+    .track-link {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 14px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; text-decoration: none; color: var(--text);
+      font-size: 0.9rem; font-weight: 500;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .track-link:hover { background: #1e1e1e; border-color: #444; }
+    .track-link img { width: 44px; height: 44px; border-radius: 4px; object-fit: cover; }
+    .track-link-info { display: flex; flex-direction: column; }
+    .track-link-title { font-weight: 600; }
+    .track-link-artist { color: var(--muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="card home-card">
+    <div class="track-info">
+      <div class="home-title">Universal Music Link</div>
+      <div class="home-sub" style="margin-top:8px">One link. Every streaming service.</div>
+    </div>
+    <hr class="divider">
+    <div class="track-links">
+      <a href="gorillaz-the-mountain/" class="track-link">
+        <img src="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4" alt="The Mountain">
+        <div class="track-link-info">
+          <span class="track-link-title">The Mountain</span>
+          <span class="track-link-artist">Gorillaz</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
