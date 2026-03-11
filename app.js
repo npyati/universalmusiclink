@@ -1,13 +1,13 @@
 const PREF_KEY = 'uml_preferred_service';
 
-// Simple Icons CDN slugs — https://simpleicons.org
+// jsDelivr serves Simple Icons SVGs as-is (black on transparent).
+// CSS filter: brightness(0) invert(1) makes them white.
 const SERVICE_ICONS = {
-  spotify:       'spotify',
-  apple_music:   'applemusic',
-  youtube_music: 'youtubemusic',
-  tidal:         'tidal',
-  amazon_music:  'amazonmusic',
-  deezer:        'deezer',
+  spotify:       'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/spotify.svg',
+  apple_music:   'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/applemusic.svg',
+  youtube_music: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtubemusic.svg',
+  tidal:         'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tidal.svg',
+  amazon_music:  'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonmusic.svg',
 };
 
 const SERVICE_LABELS = {
@@ -16,13 +16,7 @@ const SERVICE_LABELS = {
   youtube_music: 'YouTube Music',
   tidal:         'Tidal',
   amazon_music:  'Amazon Music',
-  deezer:        'Deezer',
 };
-
-function icon(serviceId, size = 18) {
-  const slug = SERVICE_ICONS[serviceId];
-  return `<img src="https://cdn.simpleicons.org/${slug}/ffffff" width="${size}" height="${size}" alt="" aria-hidden="true" class="service-icon">`;
-}
 
 function getPreference() {
   return localStorage.getItem(PREF_KEY);
@@ -30,12 +24,18 @@ function getPreference() {
 
 function setPreference(serviceId) {
   localStorage.setItem(PREF_KEY, serviceId);
-  renderServices();
 }
 
-function clearPreference() {
-  localStorage.removeItem(PREF_KEY);
-  renderServices();
+function getActive() {
+  const pref = getPreference();
+  const services = window.TRACK_SERVICES;
+  // Use preference if valid, else first available
+  if (pref && services[pref]) return pref;
+  return Object.keys(services)[0];
+}
+
+function iconImg(serviceId, size = 18) {
+  return `<img src="${SERVICE_ICONS[serviceId]}" width="${size}" height="${size}" alt="" aria-hidden="true" class="service-icon">`;
 }
 
 function renderServices() {
@@ -43,79 +43,61 @@ function renderServices() {
   if (!container) return;
 
   const services = window.TRACK_SERVICES;
-  const pref = getPreference();
+  const activeId = getActive();
+  const activeUrl = services[activeId];
+  const activeLabel = SERVICE_LABELS[activeId];
+  const others = Object.keys(services).filter(id => id !== activeId);
 
-  const available = Object.keys(services);
-  const preferredService = pref && services[pref] ? pref : null;
-  const others = available.filter(id => id !== preferredService);
-
-  let html = '';
-
-  if (preferredService) {
-    const label = SERVICE_LABELS[preferredService];
-    const url = services[preferredService];
-    html += `
-      <div class="preferred-section">
-        <div class="preferred-label">Your preferred service</div>
-        <a href="${url}" class="btn-preferred" target="_blank" rel="noopener">
-          ${icon(preferredService, 20)}
-          Open in ${label}
-        </a>
+  container.innerHTML = `
+    <div class="listen-wrap" id="listen-wrap">
+      <a href="${activeUrl}" id="listen-main" class="listen-main" target="_blank" rel="noopener">
+        ${iconImg(activeId, 20)}
+        <span id="listen-label">Open in ${activeLabel}</span>
+      </a>
+      <button class="listen-toggle" id="listen-toggle" onclick="toggleDropdown(event)" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose streaming service">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+          <path d="M6 8L1 3h10L6 8z"/>
+        </svg>
+      </button>
+      <div class="listen-dropdown" id="listen-dropdown" role="listbox" hidden>
+        ${others.map(id => `
+          <button class="dropdown-item" role="option" onclick="selectService('${id}')">
+            ${iconImg(id, 16)}
+            <span>${SERVICE_LABELS[id]}</span>
+          </button>
+        `).join('')}
       </div>
-      <hr class="divider">
-      <div class="services-section">
-        <div class="services-label">Other services</div>
-        <div class="service-list">
-    `;
-    for (const id of others) {
-      const lbl = SERVICE_LABELS[id];
-      const u = services[id];
-      html += `
-        <a href="${u}" class="btn-service" target="_blank" rel="noopener"
-           onclick="handleServiceClick(event, '${id}')">
-          ${icon(id)}
-          <span class="service-name">${lbl}</span>
-          <span class="set-default-hint">set as default</span>
-        </a>
-      `;
-    }
-    html += `
-        </div>
-        <p class="footer" style="margin-top:12px">
-          <a href="#" onclick="clearPreference();return false">Clear preference</a>
-        </p>
-      </div>
-    `;
-  } else {
-    html += `
-      <div class="services-section">
-        <div class="services-label">Listen on</div>
-        <div class="service-list all-services">
-    `;
-    for (const id of available) {
-      const lbl = SERVICE_LABELS[id];
-      const u = services[id];
-      html += `
-        <a href="${u}" class="btn-service" target="_blank" rel="noopener"
-           onclick="handleServiceClick(event, '${id}')">
-          ${icon(id)}
-          <span class="service-name">${lbl}</span>
-          <span class="set-default-hint">set as default</span>
-        </a>
-      `;
-    }
-    html += `
-        </div>
-        <p class="footer" style="margin-top:12px">Tap a service to open it — hover to set as default</p>
-      </div>
-    `;
-  }
-
-  container.innerHTML = html;
+    </div>
+  `;
 }
 
-function handleServiceClick(event, serviceId) {
+function toggleDropdown(event) {
+  event.stopPropagation();
+  const dropdown = document.getElementById('listen-dropdown');
+  const toggle = document.getElementById('listen-toggle');
+  const isOpen = !dropdown.hidden;
+
+  dropdown.hidden = isOpen;
+  toggle.setAttribute('aria-expanded', String(!isOpen));
+
+  if (!isOpen) {
+    // Close on outside click
+    document.addEventListener('click', closeDropdown, { once: true });
+  }
+}
+
+function closeDropdown() {
+  const dropdown = document.getElementById('listen-dropdown');
+  const toggle = document.getElementById('listen-toggle');
+  if (dropdown) {
+    dropdown.hidden = true;
+    toggle?.setAttribute('aria-expanded', 'false');
+  }
+}
+
+function selectService(serviceId) {
   setPreference(serviceId);
+  renderServices(); // re-renders with new active service
 }
 
 document.addEventListener('DOMContentLoaded', renderServices);
