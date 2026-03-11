@@ -21,23 +21,33 @@
   <meta name="twitter:description" content="Listen on Spotify, Apple Music, YouTube Music, Tidal, or Amazon Music." />
   <meta name="twitter:image" content="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <style>
+    :root {
+      --bg:         #ede9e1;
+      --text:       #1a1918;
+      --muted:      #8a8680;
+      --rule:       rgba(26,25,24,0.15);
+      --hover:      rgba(26,25,24,0.06);
+      --title-font: 'Syne', sans-serif;
+    }
+    /* Syne renders better with tighter leading on this title */
+    .track-title { letter-spacing: -0.04em; }
+  </style>
 </head>
 <body>
-  <div class="card">
+  <div class="page">
     <img
       class="album-art"
       src="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4"
-      alt="The Mountain album art – Gorillaz"
+      alt="The Mountain – Gorillaz"
     >
-    <div class="track-info">
-      <div class="track-title">The Mountain</div>
-      <div class="track-artist">Gorillaz</div>
-    </div>
-
-    <hr class="divider">
-
-    <div id="services-container" style="width:100%"></div>
+    <p class="track-artist">Gorillaz</p>
+    <h1 class="track-title">The Mountain</h1>
+    <hr class="rule">
+    <div id="services-container"></div>
   </div>
 
   <script>

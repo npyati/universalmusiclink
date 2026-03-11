@@ -1,12 +1,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Design tokens — overridden per track page ── */
 :root {
-  --bg: #0d0d0d;
-  --surface: #1a1a1a;
-  --border: #2a2a2a;
-  --text: #f0f0f0;
-  --muted: #888;
-  --radius: 12px;
+  --bg:         #f2f0eb;
+  --text:       #111;
+  --muted:      #999;
+  --rule:       rgba(0,0,0,0.12);
+  --hover:      rgba(0,0,0,0.05);
+  --title-font: sans-serif;
 }
 
 body {
@@ -15,63 +16,62 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 48px 24px;
 }
 
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  max-width: 420px;
+/* ── Layout ── */
+
+.page {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  max-width: 440px;
 }
+
+/* ── Album art ── */
 
 .album-art {
-  width: 220px;
-  height: 220px;
-  border-radius: 8px;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  margin-bottom: 28px;
 }
 
-.track-info { text-align: center; }
-
-.track-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
+/* ── Track info ── */
 
 .track-artist {
-  font-size: 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--muted);
-  margin-top: 4px;
+  margin-bottom: 10px;
 }
 
-.divider {
-  width: 100%;
+.track-title {
+  font-family: var(--title-font);
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+/* ── Rule ── */
+
+.rule {
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
+  margin-bottom: 24px;
 }
 
 /* ── Split button ── */
 
 .listen-wrap {
   position: relative;
-  width: 100%;
   display: flex;
-  border: 1px solid #444;
-  border-radius: 8px;
-  overflow: visible; /* allow dropdown to escape */
+  border: 1.5px solid var(--text);
 }
 
 .listen-main {
@@ -79,50 +79,44 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 16px;
-  color: var(--text);
+  padding: 14px 18px;
+  background: var(--text);
+  color: var(--bg);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 8px 0 0 8px;
-  transition: background 0.15s;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s;
 }
 
-.listen-main:hover { background: #242424; }
+.listen-main:hover { opacity: 0.88; }
 
 .listen-toggle {
+  width: 48px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  flex-shrink: 0;
   background: transparent;
   border: none;
-  border-left: 1px solid #444;
-  color: var(--muted);
+  border-left: 1.5px solid var(--text);
+  color: var(--text);
   cursor: pointer;
-  border-radius: 0 8px 8px 0;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s;
 }
 
-.listen-toggle:hover {
-  background: #242424;
-  color: var(--text);
-}
+.listen-toggle:hover { background: var(--hover); }
 
 /* ── Dropdown ── */
 
 .listen-dropdown {
   position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  right: 0;
-  background: #222;
-  border: 1px solid #444;
-  border-radius: 8px;
-  overflow: hidden;
+  top: calc(100% - 1.5px);
+  left: -1.5px;
+  right: -1.5px;
+  background: var(--bg);
+  border: 1.5px solid var(--text);
   z-index: 100;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
 .listen-dropdown[hidden] { display: none; }
@@ -132,42 +126,42 @@ body {
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 18px;
   background: transparent;
   border: none;
+  border-bottom: 1px solid var(--rule);
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
   text-align: left;
   transition: background 0.1s;
 }
 
-.dropdown-item:not(:last-child) {
-  border-bottom: 1px solid #2e2e2e;
-}
-
-.dropdown-item:hover { background: #2a2a2a; }
+.dropdown-item:last-child { border-bottom: none; }
+.dropdown-item:hover { background: var(--hover); }
 
 /* ── Icons ── */
 
 .service-icon {
   flex-shrink: 0;
   display: block;
+  opacity: 0.75;
+  /* Simple Icons are black SVGs — natural on light bg */
+}
+
+/* Invert icons inside the filled (dark) button */
+.listen-main .service-icon {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* Dark theme: invert dropdown icons too */
+body.theme-dark .service-icon {
   filter: brightness(0) invert(1);
   opacity: 0.85;
 }
-
-/* ── Footer ── */
-
-.footer {
-  font-size: 0.75rem;
-  color: var(--muted);
-  text-align: center;
-}
-
-.footer a {
-  color: var(--muted);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+body.theme-dark .listen-main .service-icon {
+  filter: brightness(0); /* button bg is light in dark theme */
+  opacity: 1;
 }
