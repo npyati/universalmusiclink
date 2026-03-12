@@ -9,9 +9,7 @@
   --hover:        rgba(0,0,0,0.05);
   --title-font:   sans-serif;
   --text-align:   left;
-  --shadow-color: #999;
-  --shadow-x:     8px;
-  --shadow-y:     8px;
+  --shadow-color: rgba(0,0,0,0.35);
 }
 
 body {
@@ -40,12 +38,21 @@ body {
   margin-bottom: 28px;
 }
 
+.album-art-wrap {
+  filter: drop-shadow(0 8px 32px var(--shadow-color));
+}
+
 .album-art {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  box-shadow: var(--shadow-x) var(--shadow-y) 0 var(--shadow-color);
+  clip-path: polygon(
+    20px 0%, calc(100% - 20px) 0%,
+    100% 20px, 100% calc(100% - 20px),
+    calc(100% - 20px) 100%, 20px 100%,
+    0% calc(100% - 20px), 0% 20px
+  );
 }
 
 /* ── Track info ── */

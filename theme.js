@@ -117,14 +117,6 @@
       root.style.setProperty('--rule',  ramp(text.hex, 0.15));
       root.style.setProperty('--hover', ramp(text.hex, 0.06));
 
-      // Color block behind image: most saturated palette color, randomized offset
-      const shadowColor = [...colors].sort((a, b) => b.sat - a.sat)[0];
-      const offsets = [[6,6], [8,8], [10,6], [6,10], [-6,6], [8,-8], [-8,-6]];
-      const [ox, oy] = offsets[Math.floor(Math.random() * offsets.length)];
-      root.style.setProperty('--shadow-color', shadowColor.hex);
-      root.style.setProperty('--shadow-x', `${ox}px`);
-      root.style.setProperty('--shadow-y', `${oy}px`);
-
       // Randomize text alignment
       const alignments = ['left', 'left', 'left', 'right', 'center']; // left-weighted
       const align = alignments[Math.floor(Math.random() * alignments.length)];
