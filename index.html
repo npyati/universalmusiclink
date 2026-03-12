@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="style.css">
   <style>
     :root { --title-font: 'Syne', sans-serif; }
-
     .home-title {
       font-family: var(--title-font);
       font-size: clamp(2rem, 6vw, 3rem);
@@ -30,24 +29,12 @@
       color: var(--muted);
       margin-bottom: 32px;
     }
-    .rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin-bottom: 24px;
-    }
     .track-links { display: flex; flex-direction: column; gap: 1px; border: 1.5px solid var(--text); }
     .track-link {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      display: flex; align-items: center; gap: 14px;
       padding: 14px 16px;
-      background: var(--bg);
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 500;
-      border-bottom: 1px solid var(--rule);
-      transition: background 0.1s;
+      background: var(--bg); text-decoration: none; color: var(--text);
+      border-bottom: 1px solid var(--rule); transition: background 0.1s;
     }
     .track-link:last-child { border-bottom: none; }
     .track-link:hover { background: var(--hover); }

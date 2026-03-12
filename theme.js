@@ -39,6 +39,11 @@
     }, 0);
   }
 
+  function saturation(r, g, b) {
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    return max === 0 ? 0 : (max - min) / max;
+  }
+
   function contrast(l1, l2) {
     const hi = Math.max(l1, l2), lo = Math.min(l1, l2);
     return (hi + 0.05) / (lo + 0.05);
@@ -66,11 +71,12 @@
         return; // CORS blocked — keep page-defined fallback vars
       }
 
-      // Annotate each color with luminance
+      // Annotate each color with luminance + saturation
       const colors = palette.map(([r, g, b]) => ({
         r, g, b,
         hex: toHex(r, g, b),
         lum: luminance(r, g, b),
+        sat: saturation(r, g, b),
       }));
 
       // Sort dark → light
@@ -110,6 +116,14 @@
       root.style.setProperty('--muted', muted.hex);
       root.style.setProperty('--rule',  ramp(text.hex, 0.15));
       root.style.setProperty('--hover', ramp(text.hex, 0.06));
+
+      // Color block behind image: most saturated palette color, randomized offset
+      const shadowColor = [...colors].sort((a, b) => b.sat - a.sat)[0];
+      const offsets = [[6,6], [8,8], [10,6], [6,10], [-6,6], [8,-8], [-8,-6]];
+      const [ox, oy] = offsets[Math.floor(Math.random() * offsets.length)];
+      root.style.setProperty('--shadow-color', shadowColor.hex);
+      root.style.setProperty('--shadow-x', `${ox}px`);
+      root.style.setProperty('--shadow-y', `${oy}px`);
 
       // Randomize text alignment
       const alignments = ['left', 'left', 'left', 'right', 'center']; // left-weighted

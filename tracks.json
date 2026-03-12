@@ -1,0 +1,18 @@
+{
+  "baseUrl": "https://npyati.github.io/universalmusiclink",
+  "tracks": [
+    {
+      "id": "gorillaz-the-mountain",
+      "title": "The Mountain",
+      "artist": "Gorillaz",
+      "art": "https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4",
+      "services": {
+        "spotify":       "https://open.spotify.com/track/3MebYJnEDK4XdnCj3VMLjL",
+        "apple_music":   "https://music.apple.com/us/album/the-mountain/1837237742?i=1837237747",
+        "youtube_music": "https://music.youtube.com/search?q=Gorillaz+The+Mountain",
+        "tidal":         "https://tidal.com/album/500753046",
+        "amazon_music":  "https://music.amazon.com/albums/B0FPJLJYN2"
+      }
+    }
+  ]
+}

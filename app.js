@@ -48,6 +48,9 @@ function renderServices() {
   const activeLabel = SERVICE_LABELS[activeId];
   const others = Object.keys(services).filter(id => id !== activeId);
 
+  const artLink = document.getElementById('album-art-link');
+  if (artLink) artLink.href = activeUrl;
+
   container.innerHTML = `
     <div class="listen-wrap" id="listen-wrap">
       <a href="${activeUrl}" id="listen-main" class="listen-main" target="_blank" rel="noopener">

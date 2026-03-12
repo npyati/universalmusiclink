@@ -2,13 +2,16 @@
 
 /* ── Design tokens — overridden per track page ── */
 :root {
-  --bg:         #f2f0eb;
-  --text:       #111;
-  --muted:      #999;
-  --rule:       rgba(0,0,0,0.12);
-  --hover:      rgba(0,0,0,0.05);
-  --title-font: sans-serif;
-  --text-align: left;
+  --bg:           #f2f0eb;
+  --text:         #111;
+  --muted:        #999;
+  --rule:         rgba(0,0,0,0.12);
+  --hover:        rgba(0,0,0,0.05);
+  --title-font:   sans-serif;
+  --text-align:   left;
+  --shadow-color: #999;
+  --shadow-x:     8px;
+  --shadow-y:     8px;
 }
 
 body {
@@ -31,12 +34,18 @@ body {
 
 /* ── Album art ── */
 
+.album-art-wrap {
+  display: block;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
 .album-art {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  margin-bottom: 28px;
+  box-shadow: var(--shadow-x) var(--shadow-y) 0 var(--shadow-color);
 }
 
 /* ── Track info ── */
