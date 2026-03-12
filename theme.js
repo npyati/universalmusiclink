@@ -128,6 +128,9 @@
         root.style.setProperty('--title-font', font.css);
       });
 
+      // Set album art as favicon
+      setFavicon(img);
+
       // Tell CSS which icon filter to use
       if (bg.lum < 0.4) {
         document.body.classList.add('theme-dark');
@@ -142,6 +145,23 @@
       run();
     } else {
       img.addEventListener('load', run);
+    }
+  }
+
+  function setFavicon(img) {
+    try {
+      const size = 32;
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, size, size);
+      const link = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      link.rel = 'icon';
+      link.href = canvas.toDataURL('image/png');
+      document.head.appendChild(link);
+    } catch (e) {
+      // CORS — skip favicon
     }
   }
 
