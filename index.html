@@ -42,6 +42,14 @@
     .track-link-info { display: flex; flex-direction: column; gap: 2px; }
     .track-link-title { font-weight: 600; font-size: 0.9rem; }
     .track-link-artist { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.05em; }
+    .track-link-date {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -49,15 +57,30 @@
     <p class="home-sub">Universal Music Link</p>
     <h1 class="home-title">One link.<br>Every service.</h1>
     <hr class="rule">
-    <div class="track-links">
-      <a href="gorillaz-the-mountain/" class="track-link">
-        <img src="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4" alt="The Mountain">
-        <div class="track-link-info">
-          <span class="track-link-title">The Mountain</span>
-          <span class="track-link-artist">Gorillaz</span>
-        </div>
-      </a>
-    </div>
+    <div class="track-links" id="track-list"></div>
   </div>
+  <script>
+    fetch('featured.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var list = data.schedule || [];
+        list.sort(function (a, b) { return b.date.localeCompare(a.date); });
+        var container = document.getElementById('track-list');
+        container.innerHTML = list.map(function (t) {
+          var slug = t.url.replace(/.*universalmusiclink\//, '').replace(/\/$/, '') + '/';
+          var img = t.image.replace('ab67616d0000b273', 'ab67616d00001e02');
+          var d = new Date(t.date + 'T00:00:00');
+          var dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+          return '<a href="' + slug + '" class="track-link">'
+            + '<img src="' + img + '" alt="' + t.title + '">'
+            + '<div class="track-link-info">'
+            + '<span class="track-link-title">' + t.title + '</span>'
+            + '<span class="track-link-artist">' + t.artist + '</span>'
+            + '</div>'
+            + '<span class="track-link-date">' + dateStr + '</span>'
+            + '</a>';
+        }).join('');
+      });
+  </script>
 </body>
 </html>
