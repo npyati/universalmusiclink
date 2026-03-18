@@ -8,7 +8,7 @@ This document is a complete spec for integrating the Universal Music Link (UML) 
 
 Universal Music Link is a static site (GitHub Pages) that hosts dedicated landing pages for music tracks. Each page shows album art, track info, and a multi-service split-button dropdown (Spotify, Apple Music, YouTube Music, Tidal, Amazon Music) that remembers the user's preferred service via `localStorage`.
 
-The "featured" API + embed system lets any external page display the currently-featured track with the full interactive dropdown widget.
+The "featured" API + embed system lets any external page display the currently-featured track with the full interactive dropdown widget. The featured track rotates automatically based on a date schedule defined in `featured.json`.
 
 ---
 
@@ -22,25 +22,35 @@ GET https://npyati.github.io/universalmusiclink/featured.json
 **Response shape:**
 ```json
 {
-  "artist": "Gorillaz",
-  "title": "The Mountain",
-  "image": "https://i.scdn.co/image/ab67616d0000b273eeb01b41f48210d032d1b6a4",
-  "url": "https://npyati.github.io/universalmusiclink/gorillaz-the-mountain/",
-  "services": {
-    "spotify": "https://open.spotify.com/track/3MebYJnEDK4XdnCj3VMLjL",
-    "apple_music": "https://music.apple.com/us/album/the-mountain/1837237742?i=1837237747",
-    "youtube_music": "https://music.youtube.com/search?q=Gorillaz+The+Mountain",
-    "tidal": "https://tidal.com/album/500753046",
-    "amazon_music": "https://music.amazon.com/albums/B0FPJLJYN2"
-  }
+  "schedule": [
+    {
+      "date": "2026-03-16",
+      "artist": "Gorillaz",
+      "title": "The Mountain",
+      "image": "https://i.scdn.co/image/ab67616d0000b273eeb01b41f48210d032d1b6a4",
+      "url": "https://npyati.github.io/universalmusiclink/gorillaz-the-mountain/",
+      "services": {
+        "spotify": "https://open.spotify.com/track/3MebYJnEDK4XdnCj3VMLjL",
+        "apple_music": "https://music.apple.com/us/album/the-mountain/1837237742?i=1837237747",
+        "youtube_music": "https://music.youtube.com/search?q=Gorillaz+The+Mountain",
+        "tidal": "https://tidal.com/album/500753046",
+        "amazon_music": "https://music.amazon.com/albums/B0FPJLJYN2"
+      }
+    }
+  ]
 }
 ```
 
+### Schedule array
+
+`schedule` is an array of track entries sorted in any order (the embed script sorts them). Each entry:
+
 | Field | Type | Description |
 |---|---|---|
+| `date` | string (YYYY-MM-DD) | The date this track becomes featured |
 | `artist` | string | Artist display name |
 | `title` | string | Track or album title |
-| `image` | string (URL) | Square album art (640×640 from Spotify CDN) |
+| `image` | string (URL) | Square album art (640×640) |
 | `url` | string (URL) | UML landing page for the track |
 | `services` | object | Map of service ID → deep link URL |
 
@@ -48,6 +58,29 @@ GET https://npyati.github.io/universalmusiclink/featured.json
 `spotify`, `apple_music`, `youtube_music`, `tidal`, `amazon_music`
 
 This is a static JSON file. No auth. No CORS issues (GitHub Pages serves with `Access-Control-Allow-Origin: *`).
+
+---
+
+## Schedule Behavior (Date Picking)
+
+The embed script picks the active track client-side using the visitor's local date:
+
+- Finds the **most recent entry whose `date` ≤ today** (YYYY-MM-DD, local time)
+- If all entries are in the future, shows the **first** entry
+- Date order in the array does not matter — the script sorts before picking
+
+This means you can pre-load upcoming tracks in `featured.json` and they will automatically go live on their scheduled date with no deployment needed.
+
+**Example timeline:**
+
+```
+Schedule: [2026-03-16 Track A] [2026-04-01 Track B] [2026-05-01 Track C]
+
+Visitor on 2026-03-20 → sees Track A
+Visitor on 2026-04-01 → sees Track B  (goes live at midnight local time)
+Visitor on 2026-04-15 → sees Track B
+Visitor on 2026-05-02 → sees Track C
+```
 
 ---
 
@@ -61,9 +94,10 @@ https://npyati.github.io/universalmusiclink/embed.js
 This is a self-contained IIFE. It:
 1. Looks for `<div id="uml-featured">` in the DOM
 2. Fetches `featured.json`
-3. Injects scoped CSS (one `<style id="uml-embed-styles">` tag, injected once)
-4. Renders the widget HTML into the target div
-5. Attaches dropdown toggle and service-select event listeners
+3. Picks the active track from the schedule using the visitor's local date
+4. Injects scoped CSS (one `<style id="uml-embed-styles">` tag, injected once)
+5. Renders the widget HTML into the target div
+6. Attaches dropdown toggle and service-select event listeners
 
 **Usage:**
 ```html
@@ -160,13 +194,28 @@ If the host page has a dark background, the dropdown icons will be hard to see u
 
 ## Manual Fetch (Alternative to Embed Script)
 
-If you want to build a custom UI rather than use `embed.js`, just fetch the JSON directly:
+If you want to build a custom UI rather than use `embed.js`, fetch the JSON and implement the picker yourself:
 
 ```js
+function pickFeatured(schedule) {
+  const today = new Date();
+  const todayStr = today.getFullYear() + '-'
+    + String(today.getMonth() + 1).padStart(2, '0') + '-'
+    + String(today.getDate()).padStart(2, '0');
+
+  const sorted = [...schedule].sort((a, b) => a.date.localeCompare(b.date));
+  let active = sorted[0];
+  for (const entry of sorted) {
+    if (entry.date <= todayStr) active = entry;
+  }
+  return active;
+}
+
 fetch('https://npyati.github.io/universalmusiclink/featured.json')
   .then(r => r.json())
   .then(data => {
-    // data.artist, data.title, data.image, data.url, data.services
+    const track = pickFeatured(data.schedule);
+    // track.artist, track.title, track.image, track.url, track.services
   });
 ```
 
@@ -174,10 +223,12 @@ The `services` object key order is the display order for the dropdown. The `url`
 
 ---
 
-## Updating the Featured Track
+## Adding Tracks to the Schedule
 
-To change the featured track, edit `featured.json` at the root of the repo and push to `master`. GitHub Pages serves it within ~1 minute. There is no cache-busting — browsers may cache the JSON for a short period based on GitHub Pages' cache headers (~10 min).
+1. Create the track directory (e.g. `artist-trackname/index.html`) following the pattern of `gorillaz-the-mountain/index.html`
+2. Add a new entry to the `schedule` array in `featured.json` with the desired `date`
+3. Push to `master` — GitHub Pages deploys within ~1 minute
 
-To update what's shown:
-1. Add a new track directory (e.g. `artist-trackname/index.html`) following the pattern of `gorillaz-the-mountain/index.html`
-2. Update `featured.json` with the new track's `artist`, `title`, `image`, `url`, and `services`
+**To pre-schedule future tracks:** just add entries with future dates. They will not be shown until that date arrives in the visitor's local timezone. There is no re-deployment needed when a scheduled date passes.
+
+**Note on caching:** GitHub Pages caches `featured.json` for ~10 minutes. A track scheduled for midnight may appear slightly late for cached visitors.

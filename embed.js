@@ -272,6 +272,27 @@
     renderDropdown(widget, data);
   }
 
+  function todayStr() {
+    const d = new Date();
+    return d.getFullYear() + '-'
+      + String(d.getMonth() + 1).padStart(2, '0') + '-'
+      + String(d.getDate()).padStart(2, '0');
+  }
+
+  // Returns the most recent schedule entry whose date <= today.
+  // Falls back to the first entry if all dates are in the future.
+  function pickFromSchedule(schedule) {
+    const today = todayStr();
+    const sorted = schedule.slice().sort(function (a, b) {
+      return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+    });
+    var active = sorted[0];
+    for (var i = 0; i < sorted.length; i++) {
+      if (sorted[i].date <= today) active = sorted[i];
+    }
+    return active;
+  }
+
   function init() {
     const target = document.getElementById('uml-featured');
     if (!target) return;
@@ -285,7 +306,10 @@
 
     fetch(API_URL)
       .then(function (r) { return r.json(); })
-      .then(function (data) { render(target, data); })
+      .then(function (data) {
+        const track = data.schedule ? pickFromSchedule(data.schedule) : data;
+        render(target, track);
+      })
       .catch(function (err) { console.error('[uml-embed] Failed to load featured:', err); });
   }
 

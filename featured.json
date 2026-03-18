@@ -1,13 +1,32 @@
 {
-  "artist": "Gorillaz",
-  "title": "The Mountain",
-  "image": "https://i.scdn.co/image/ab67616d0000b273eeb01b41f48210d032d1b6a4",
-  "url": "https://npyati.github.io/universalmusiclink/gorillaz-the-mountain/",
-  "services": {
-    "spotify": "https://open.spotify.com/track/3MebYJnEDK4XdnCj3VMLjL",
-    "apple_music": "https://music.apple.com/us/album/the-mountain/1837237742?i=1837237747",
-    "youtube_music": "https://music.youtube.com/search?q=Gorillaz+The+Mountain",
-    "tidal": "https://tidal.com/album/500753046",
-    "amazon_music": "https://music.amazon.com/albums/B0FPJLJYN2"
-  }
+  "schedule": [
+    {
+      "date": "2026-03-18",
+      "artist": "Marvin Gaye",
+      "title": "What's Going On",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc",
+      "url": "https://npyati.github.io/universalmusiclink/marvin-gaye-whats-going-on/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2v6ANhWhZBUKkg6pJJBs3B",
+        "apple_music": "https://music.apple.com/us/album/whats-going-on/1538081586",
+        "youtube_music": "https://music.youtube.com/search?q=Marvin+Gaye+What%27s+Going+On",
+        "tidal": "https://tidal.com/browse/album/77632885",
+        "amazon_music": "https://music.amazon.com/albums/B08MVJQY9W"
+      }
+    },
+    {
+      "date": "2026-03-16",
+      "artist": "Gorillaz",
+      "title": "The Mountain",
+      "image": "https://i.scdn.co/image/ab67616d0000b273eeb01b41f48210d032d1b6a4",
+      "url": "https://npyati.github.io/universalmusiclink/gorillaz-the-mountain/",
+      "services": {
+        "spotify": "https://open.spotify.com/track/3MebYJnEDK4XdnCj3VMLjL",
+        "apple_music": "https://music.apple.com/us/album/the-mountain/1837237742?i=1837237747",
+        "youtube_music": "https://music.youtube.com/search?q=Gorillaz+The+Mountain",
+        "tidal": "https://tidal.com/album/500753046",
+        "amazon_music": "https://music.amazon.com/albums/B0FPJLJYN2"
+      }
+    }
+  ]
 }
