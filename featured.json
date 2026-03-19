@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-19",
+      "artist": "Kishi Bashi",
+      "title": "151a",
+      "image": "https://i.scdn.co/image/ab67616d0000b27344243c7a1d8b2d58e4973d87",
+      "url": "https://npyati.github.io/universalmusiclink/kishi-bashi-151a/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/1KqRTsqsAE9DC2M7jqDQec",
+        "apple_music": "https://music.apple.com/us/album/151a/640171484",
+        "youtube_music": "https://music.youtube.com/search?q=Kishi+Bashi+151a",
+        "tidal": "https://tidal.com/browse/album/19927149",
+        "amazon_music": "https://music.amazon.com/albums/B00CTXPZ6U"
+      }
+    },
+    {
       "date": "2026-03-18",
       "artist": "Marvin Gaye",
       "title": "What's Going On",
