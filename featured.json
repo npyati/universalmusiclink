@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-20",
+      "artist": "Kraftwerk",
+      "title": "Trans-Europe Express",
+      "image": "https://i.scdn.co/image/ab67616d0000b2737cf7be893131178035b2a3cb",
+      "url": "https://npyati.github.io/universalmusiclink/kraftwerk-trans-europe-express/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0HHRIVjvBcnTepfeRVgS2f",
+        "apple_music": "https://music.apple.com/us/album/trans-europe-express-2009-remaster/726144557",
+        "youtube_music": "https://music.youtube.com/search?q=Kraftwerk+Trans-Europe+Express",
+        "tidal": "https://tidal.com/browse/album/3131362",
+        "amazon_music": "https://music.amazon.com/albums/B002PXFMUI"
+      }
+    },
+    {
       "date": "2026-03-19",
       "artist": "Kishi Bashi",
       "title": "151a",
