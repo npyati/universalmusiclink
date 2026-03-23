@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-23",
+      "artist": "Wet Leg",
+      "title": "Wet Leg",
+      "image": "https://i.scdn.co/image/ab67616d0000b2731ce49e09e09c4f4f54533a1e",
+      "url": "https://npyati.github.io/universalmusiclink/wet-leg-wet-leg/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0r9awI5WRCZpwk0aVQ4bKO",
+        "apple_music": "https://music.apple.com/us/album/wet-leg/1594742869",
+        "youtube_music": "https://music.youtube.com/search?q=Wet+Leg+Wet+Leg",
+        "tidal": "https://tidal.com/browse/album/223177137",
+        "amazon_music": "https://music.amazon.com/albums/B09LK785MH"
+      }
+    },
+    {
       "date": "2026-03-20",
       "artist": "Kraftwerk",
       "title": "Trans-Europe Express",
