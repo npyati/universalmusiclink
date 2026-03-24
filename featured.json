@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-24",
+      "artist": "Television",
+      "title": "Marquee Moon",
+      "image": "https://i.scdn.co/image/ab67616d0000b2736b7e8fe1cb7c4e43e16c7e5c",
+      "url": "https://npyati.github.io/universalmusiclink/television-marquee-moon/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2De4UaRnMnEOQzGJMkMmMO",
+        "apple_music": "https://music.apple.com/us/album/marquee-moon/1560735892",
+        "youtube_music": "https://music.youtube.com/search?q=Television+Marquee+Moon",
+        "tidal": "https://tidal.com/browse/album/77018780",
+        "amazon_music": "https://music.amazon.com/albums/B08XYN5GCY"
+      }
+    },
+    {
       "date": "2026-03-23",
       "artist": "Wet Leg",
       "title": "Wet Leg",
