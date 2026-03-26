@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-26",
+      "artist": "Talk Talk",
+      "title": "Spirit of Eden",
+      "image": "https://i.scdn.co/image/ab67616d0000b2736a3ec25c01f5b9c9022a3473",
+      "url": "https://npyati.github.io/universalmusiclink/talk-talk-spirit-of-eden/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4YXo7p7aubyVIbNLoVlBp9",
+        "apple_music": "https://music.apple.com/us/album/spirit-of-eden/701395363",
+        "youtube_music": "https://music.youtube.com/search?q=Talk+Talk+Spirit+of+Eden",
+        "tidal": "https://tidal.com/browse/album/166994",
+        "amazon_music": "https://music.amazon.com/albums/B000T04200"
+      }
+    },
+    {
       "date": "2026-03-25",
       "artist": "Asha Puthli",
       "title": "Asha Puthli",
