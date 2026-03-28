@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-28",
+      "artist": "Fela Kuti",
+      "title": "Zombie",
+      "image": "https://i.scdn.co/image/ab67616d0000b273f8c1f8ce51cb9ba003f32722",
+      "url": "https://npyati.github.io/universalmusiclink/fela-kuti-zombie/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4CGGf13zt9Jva2ia4CKQi6",
+        "apple_music": "https://music.apple.com/us/album/zombie/559710299",
+        "youtube_music": "https://music.youtube.com/search?q=Fela+Kuti+Zombie",
+        "tidal": "https://tidal.com/browse/album/17041298",
+        "amazon_music": "https://music.amazon.com/albums/B073J4GSKW"
+      }
+    },
+    {
       "date": "2026-03-27",
       "artist": "Talking Heads",
       "title": "Remain in Light",
