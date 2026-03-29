@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-03-29",
+      "artist": "Os Mutantes",
+      "title": "Os Mutantes",
+      "image": "https://i.scdn.co/image/ab67616d0000b273cf5f9eaa0d3a164305c35b49",
+      "url": "https://npyati.github.io/universalmusiclink/os-mutantes-os-mutantes/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0RBkIFbQy91qv8Tqja20og",
+        "apple_music": "https://music.apple.com/us/album/os-mutantes/1443152697",
+        "youtube_music": "https://music.youtube.com/search?q=Os+Mutantes+Os+Mutantes",
+        "tidal": "https://tidal.com/browse/album/479590",
+        "amazon_music": "https://music.amazon.com/albums/B000V6Q9MQ"
+      }
+    },
+    {
       "date": "2026-03-28",
       "artist": "Fela Kuti",
       "title": "Zombie",
