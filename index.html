@@ -14,6 +14,17 @@
   <link rel="stylesheet" href="style.css">
   <style>
     :root { --title-font: 'Syne', sans-serif; }
+
+    body {
+      align-items: flex-start;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .page {
+      max-width: 720px;
+    }
+
     .home-title {
       font-family: var(--title-font);
       font-size: clamp(2rem, 6vw, 3rem);
@@ -29,57 +40,226 @@
       color: var(--muted);
       margin-bottom: 32px;
     }
-    .track-links { display: flex; flex-direction: column; gap: 1px; border: 1.5px solid var(--text); }
-    .track-link {
-      display: flex; align-items: center; gap: 14px;
-      padding: 14px 16px;
-      background: var(--bg); text-decoration: none; color: var(--text);
-      border-bottom: 1px solid var(--rule); transition: background 0.1s;
+
+    /* ── Calendar ── */
+    .cal-month {
+      margin-bottom: 36px;
     }
-    .track-link:last-child { border-bottom: none; }
-    .track-link:hover { background: var(--hover); }
-    .track-link img { width: 40px; height: 40px; object-fit: cover; flex-shrink: 0; }
-    .track-link-info { display: flex; flex-direction: column; gap: 2px; }
-    .track-link-title { font-weight: 600; font-size: 0.9rem; }
-    .track-link-artist { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.05em; }
-    .track-link-date {
-      margin-left: auto;
-      font-size: 0.7rem;
+    .cal-month-label {
+      font-family: var(--title-font);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .cal-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .cal-header div {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--muted);
-      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 6px 0;
+    }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .cal-cell {
+      aspect-ratio: 1;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--hover);
+    }
+    .cal-cell.empty {
+      background: transparent;
+    }
+    .cal-cell .day-num {
+      position: absolute;
+      top: 3px;
+      left: 5px;
+      font-size: 0.5rem;
+      font-weight: 600;
+      color: var(--muted);
+      z-index: 2;
+      line-height: 1;
+    }
+    .cal-cell.has-album .day-num {
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Album link */
+    .cal-cell a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+    .cal-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .cal-cell.has-album {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cal-cell.has-album:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      z-index: 10;
+    }
+
+    /* Tooltip on hover */
+    .cal-tooltip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px 6px 5px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+    .cal-cell:hover .cal-tooltip { opacity: 1; }
+    .cal-tooltip .tip-title {
+      font-size: 0.55rem;
+      font-weight: 600;
+      color: #fff;
       white-space: nowrap;
-      flex-shrink: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .cal-tooltip .tip-artist {
+      font-size: 0.45rem;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cal-cell.today {
+      outline: 2px solid var(--text);
+      outline-offset: -2px;
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <p class="home-sub">Universal Music Link</p>
-    <h1 class="home-title">One link.<br>Every service.</h1>
-    <hr class="rule">
-    <div class="track-links" id="track-list"></div>
+    <div id="calendar"></div>
   </div>
   <script>
     fetch('featured.json')
       .then(function (r) { return r.json(); })
       .then(function (data) {
         var list = data.schedule || [];
-        list.sort(function (a, b) { return b.date.localeCompare(a.date); });
-        var container = document.getElementById('track-list');
-        container.innerHTML = list.map(function (t) {
-          var slug = t.url.replace(/.*universalmusiclink\//, '').replace(/\/$/, '') + '/';
-          var img = t.image.replace('ab67616d0000b273', 'ab67616d00001e02');
-          var d = new Date(t.date + 'T00:00:00');
-          var dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-          return '<a href="' + slug + '" class="track-link">'
-            + '<img src="' + img + '" alt="' + t.title + '">'
-            + '<div class="track-link-info">'
-            + '<span class="track-link-title">' + t.title + '</span>'
-            + '<span class="track-link-artist">' + t.artist + '</span>'
-            + '</div>'
-            + '<span class="track-link-date">' + dateStr + '</span>'
-            + '</a>';
-        }).join('');
+
+        // Build a date-keyed lookup and find the range of months to display
+        var byDate = {};
+        list.forEach(function (t) { byDate[t.date] = t; });
+
+        // Collect unique year-month combos, sorted newest first
+        var months = {};
+        list.forEach(function (t) {
+          var key = t.date.substring(0, 7); // "YYYY-MM"
+          months[key] = true;
+        });
+        var monthKeys = Object.keys(months).sort().reverse();
+
+        var today = new Date();
+        var todayStr = today.getFullYear() + '-'
+          + String(today.getMonth() + 1).padStart(2, '0') + '-'
+          + String(today.getDate()).padStart(2, '0');
+
+        var container = document.getElementById('calendar');
+        var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+        monthKeys.forEach(function (key) {
+          var parts = key.split('-');
+          var year = parseInt(parts[0], 10);
+          var month = parseInt(parts[1], 10) - 1;
+          var firstDay = new Date(year, month, 1);
+          var daysInMonth = new Date(year, month + 1, 0).getDate();
+          var startDow = firstDay.getDay();
+
+          var section = document.createElement('div');
+          section.className = 'cal-month';
+
+          var label = document.createElement('div');
+          label.className = 'cal-month-label';
+          label.textContent = firstDay.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+          section.appendChild(label);
+
+          var header = document.createElement('div');
+          header.className = 'cal-header';
+          days.forEach(function (d) {
+            var div = document.createElement('div');
+            div.textContent = d;
+            header.appendChild(div);
+          });
+          section.appendChild(header);
+
+          var grid = document.createElement('div');
+          grid.className = 'cal-grid';
+
+          // Empty cells before the 1st
+          for (var i = 0; i < startDow; i++) {
+            var empty = document.createElement('div');
+            empty.className = 'cal-cell empty';
+            grid.appendChild(empty);
+          }
+
+          for (var day = 1; day <= daysInMonth; day++) {
+            var dateStr = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+            var album = byDate[dateStr];
+            var cell = document.createElement('div');
+            cell.className = 'cal-cell';
+            if (album) cell.className += ' has-album';
+            if (dateStr === todayStr) cell.className += ' today';
+
+            var num = document.createElement('div');
+            num.className = 'day-num';
+            num.textContent = day;
+            cell.appendChild(num);
+
+            if (album) {
+              var slug = album.url.replace(/.*universalmusiclink\//, '').replace(/\/$/, '') + '/';
+              var link = document.createElement('a');
+              link.href = slug;
+
+              var img = document.createElement('img');
+              img.src = album.image.replace('ab67616d0000b273', 'ab67616d00001e02');
+              img.alt = album.artist + ' \u2013 ' + album.title;
+              img.loading = 'lazy';
+              link.appendChild(img);
+              cell.appendChild(link);
+
+              var tip = document.createElement('div');
+              tip.className = 'cal-tooltip';
+              tip.innerHTML = '<div class="tip-title">' + album.title + '</div>'
+                + '<div class="tip-artist">' + album.artist + '</div>';
+              cell.appendChild(tip);
+            }
+
+            grid.appendChild(cell);
+          }
+
+          section.appendChild(grid);
+          container.appendChild(section);
+        });
       });
   </script>
 </body>
