@@ -1,6 +1,20 @@
 {
   "schedule": [
     {
+      "date": "2026-04-02",
+      "artist": "Mdou Moctar",
+      "title": "Afrique Victime",
+      "image": "https://i.scdn.co/image/ab67616d0000b273be9b4f78bd9ab6737c75c2a8",
+      "url": "https://npyati.github.io/universalmusiclink/mdou-moctar-afrique-victime/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/3ZZMK1Hd8E9Uzj1Tycdlf2",
+        "apple_music": "https://music.apple.com/us/album/afrique-victime/1586464398",
+        "youtube_music": "https://music.youtube.com/search?q=Mdou+Moctar+Afrique+Victime",
+        "tidal": "https://tidal.com/browse/album/182354281",
+        "amazon_music": "https://music.amazon.com/albums/B08W53GVMV"
+      }
+    },
+    {
       "date": "2026-04-01",
       "artist": "A Tribe Called Quest",
       "title": "The Low End Theory",
