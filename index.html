@@ -6,7 +6,7 @@
   <title>AOTD</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E85830'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,8 +14,7 @@
       background: #E85830;
       font-family: 'Inter', -apple-system, sans-serif;
       min-height: 100vh;
-      padding: 80px 48px;
-      /* Warm gradient shift — not perfectly flat */
+      padding: 48px 48px 80px;
       background-image:
         radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.04) 0%, transparent 70%),
         radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.06) 0%, transparent 70%),
@@ -35,19 +34,47 @@
       background-size: 200px 200px;
     }
 
+    /* ── View toggle ── */
+    .view-toggle {
+      max-width: 1400px;
+      margin: 0 auto 32px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+    .view-btn {
+      width: 36px; height: 36px;
+      border: none;
+      border-radius: 4px;
+      background: rgba(0,0,0,0.15);
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .view-btn:hover {
+      background: rgba(0,0,0,0.25);
+      color: rgba(255,255,255,0.8);
+    }
+    .view-btn.active {
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+    }
+
+    /* ════════════════════════════════
+       GALLERY VIEW
+       ════════════════════════════════ */
     .gallery-wall {
       max-width: 1400px;
       margin: 0 auto;
     }
-
-    /* ── Row composition ── */
     .g-row {
       display: flex;
       align-items: flex-end;
       margin-bottom: 80px;
     }
-
-    /* ── Single piece (artwork + wall label) ── */
     .g-piece {
       text-decoration: none;
       color: inherit;
@@ -56,20 +83,15 @@
       gap: 14px;
       flex-shrink: 0;
     }
-
     .g-art-wrap {
       flex: 1;
       min-width: 0;
     }
-
-    /* The artwork */
     .g-art {
       display: block;
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;
-      /* Contact shadow (tight, dark — where object meets wall) */
-      /* Cast shadow (soft, offset down-right — light from upper-left) */
       box-shadow:
         0 1px 1px rgba(0,0,0,0.2),
         2px 4px 6px rgba(0,0,0,0.18),
@@ -78,7 +100,6 @@
       transition: box-shadow 0.4s, transform 0.4s;
     }
     .g-piece:hover .g-art {
-      /* Lifts slightly off the wall */
       transform: translateY(-2px);
       box-shadow:
         0 2px 2px rgba(0,0,0,0.15),
@@ -86,8 +107,6 @@
         6px 14px 28px rgba(0,0,0,0.14),
         8px 24px 56px rgba(0,0,0,0.1);
     }
-
-    /* ── Museum wall label ── */
     .g-label {
       flex-shrink: 0;
       width: 140px;
@@ -101,51 +120,112 @@
       border-radius: 1px;
     }
     .g-label-artist {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      color: #333;
-      line-height: 1.4;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.01em; color: #333; line-height: 1.4;
     }
     .g-label-title {
-      font-size: 0.65rem;
-      font-weight: 300;
-      font-style: italic;
-      color: #333;
-      line-height: 1.4;
+      font-size: 0.65rem; font-weight: 300;
+      font-style: italic; color: #333; line-height: 1.4;
     }
     .g-label-date {
-      font-size: 0.6rem;
-      font-weight: 300;
-      color: #999;
-      margin-top: 3px;
-      line-height: 1.4;
+      font-size: 0.6rem; font-weight: 300;
+      color: #999; margin-top: 3px; line-height: 1.4;
     }
     .g-label-medium {
-      font-size: 0.55rem;
-      font-weight: 300;
-      color: #bbb;
-      line-height: 1.4;
+      font-size: 0.55rem; font-weight: 300;
+      color: #bbb; line-height: 1.4;
     }
 
+    /* ════════════════════════════════
+       CALENDAR VIEW
+       ════════════════════════════════ */
+    .calendar-view {
+      max-width: 720px;
+      margin: 0 auto;
+      font-family: 'Anybody', sans-serif;
+    }
+    .cal-month { margin-bottom: 36px; }
+    .cal-month-label {
+      font-size: 1.4rem; font-weight: 800;
+      letter-spacing: -0.02em; margin-bottom: 12px; color: #fff;
+    }
+    .cal-header {
+      display: grid; grid-template-columns: repeat(7, 1fr);
+      gap: 4px; margin-bottom: 4px;
+    }
+    .cal-header div {
+      font-size: 0.55rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #fff; opacity: 0.5; text-align: center; padding: 6px 0;
+    }
+    .cal-grid {
+      display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+    }
+    .cal-cell {
+      aspect-ratio: 1; position: relative;
+      border-radius: 4px; overflow: hidden; background: #d44e28;
+    }
+    .cal-cell.empty { background: transparent; }
+    .cal-cell .day-num {
+      position: absolute; top: 3px; left: 5px;
+      font-size: 1.3rem; font-weight: 800;
+      color: #FCC4B4; z-index: 2; line-height: 1;
+    }
+    .cal-cell.has-album .day-num {
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+    .cal-cell a {
+      display: block; width: 100%; height: 100%; text-decoration: none;
+    }
+    .cal-cell img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .cal-cell.has-album {
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cal-cell.has-album:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    .cal-tooltip {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 16px 6px 5px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    }
+    .cal-cell:hover .cal-tooltip { opacity: 1; }
+    .cal-tooltip .tip-title {
+      font-size: 0.55rem; font-weight: 600; color: #fff;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.2;
+    }
+    .cal-tooltip .tip-artist {
+      font-size: 0.45rem; color: rgba(255,255,255,0.6);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .cal-cell.today {
+      outline: 2px solid #fff; outline-offset: -2px;
+    }
+
+    /* ── View visibility ── */
+    .view-panel { display: none; }
+    .view-panel.active { display: block; }
+
+    /* ── Responsive ── */
     @media (max-width: 768px) {
-      body { padding: 40px 16px; }
+      body { padding: 32px 16px 60px; }
+      .view-toggle { margin-bottom: 24px; }
       .g-row {
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-bottom: 40px;
+        flex-wrap: wrap; gap: 40px; margin-bottom: 40px;
       }
       .g-piece {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        flex-direction: column; align-items: flex-start;
+        margin-left: 0 !important; margin-right: 0 !important;
       }
-      .g-label {
-        width: auto;
-        max-width: none;
-      }
-      /* Alternate sizes on mobile: ~60% and ~36% */
+      .g-label { width: auto; max-width: none; }
       .g-row .g-piece:only-child { width: 75% !important; }
       .g-row .g-piece:first-child:not(:only-child) { width: 58% !important; }
       .g-row .g-piece:nth-child(2) { width: 34% !important; }
@@ -154,11 +234,64 @@
   </style>
 </head>
 <body>
-  <div class="gallery-wall" id="wall"></div>
+  <div class="view-toggle" id="view-toggle">
+    <!-- Gallery icon (grid of mixed sizes) -->
+    <button class="view-btn active" id="btn-gallery" title="Gallery view" aria-label="Gallery view">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="1" y="1" width="7" height="10" rx="0.5"/>
+        <rect x="10" y="1" width="7" height="6" rx="0.5"/>
+        <rect x="1" y="13" width="7" height="4" rx="0.5"/>
+        <rect x="10" y="9" width="7" height="8" rx="0.5"/>
+      </svg>
+    </button>
+    <!-- Calendar icon -->
+    <button class="view-btn" id="btn-calendar" title="Calendar view" aria-label="Calendar view">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="1" y="3" width="16" height="14" rx="1"/>
+        <line x1="1" y1="7" x2="17" y2="7"/>
+        <line x1="5" y1="1" x2="5" y2="5"/>
+        <line x1="13" y1="1" x2="13" y2="5"/>
+        <circle cx="5" cy="11" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="13" cy="11" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="view-panel active" id="panel-gallery">
+    <div class="gallery-wall" id="wall"></div>
+  </div>
+  <div class="view-panel" id="panel-calendar">
+    <div class="calendar-view" id="calendar"></div>
+  </div>
 
   <script>
+    /* ── View switching ── */
+    var btnGallery = document.getElementById('btn-gallery');
+    var btnCalendar = document.getElementById('btn-calendar');
+    var panelGallery = document.getElementById('panel-gallery');
+    var panelCalendar = document.getElementById('panel-calendar');
+
+    function setView(view) {
+      var isGallery = view === 'gallery';
+      panelGallery.classList.toggle('active', isGallery);
+      panelCalendar.classList.toggle('active', !isGallery);
+      btnGallery.classList.toggle('active', isGallery);
+      btnCalendar.classList.toggle('active', !isGallery);
+      localStorage.setItem('aotd_view', view);
+    }
+
+    btnGallery.addEventListener('click', function () { setView('gallery'); });
+    btnCalendar.addEventListener('click', function () { setView('calendar'); });
+
+    // Restore preference (default gallery)
+    var savedView = localStorage.getItem('aotd_view');
+    if (savedView === 'calendar') setView('calendar');
+
+    /* ── Helpers ── */
     function slug(t) { return t.url.replace(/.*universalmusiclink\//, '').replace(/\/$/, '') + '/'; }
     function full(t) { return t.image; }
+    function thumb(t) { return t.image.replace('ab67616d0000b273', 'ab67616d00001e02'); }
     function fmtDate(t) {
       var d = new Date(t.date + 'T00:00:00');
       return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -169,89 +302,144 @@
       .then(function (data) {
         var list = data.schedule || [];
         list.sort(function (a, b) { return b.date.localeCompare(a.date); });
-
-        var wall = document.getElementById('wall');
-
-        /*
-          Layout patterns — hand-composed rows.
-          Each pattern defines pieces with:
-            w     = width as % of container
-            ml/mr = left/right margin as % (for spacing & asymmetry)
-            align = 'top' or 'bottom' (vertical alignment within row)
-        */
-        var patterns = [
-          // 1 large piece, pushed left
-          [
-            { w: 55, ml: 0, mr: 0 }
-          ],
-          // 2 pieces: small left, medium right with gap
-          [
-            { w: 25, ml: 4, mr: 0 },
-            { w: 38, ml: 12, mr: 0 }
-          ],
-          // 1 wide piece, centered
-          [
-            { w: 48, ml: 26, mr: 0 }
-          ],
-          // 3 pieces: small, small, medium — spread across
-          [
-            { w: 20, ml: 0, mr: 0 },
-            { w: 22, ml: 6, mr: 0 },
-            { w: 32, ml: 8, mr: 0 }
-          ],
-          // 1 large piece, pushed right
-          [
-            { w: 50, ml: 40, mr: 0 }
-          ],
-          // 2 pieces: medium left, small right
-          [
-            { w: 36, ml: 0, mr: 0 },
-            { w: 22, ml: 16, mr: 0 }
-          ],
-        ];
-
-        var idx = 0;
-        var patIdx = 0;
-
-        while (idx < list.length) {
-          var pat = patterns[patIdx % patterns.length];
-          var row = document.createElement('div');
-          row.className = 'g-row';
-
-          for (var s = 0; s < pat.sizes_count && idx < list.length; s++) {
-            // handled below
-          }
-
-          // Build each piece in this row's pattern
-          var piecesInRow = Math.min(pat.length, list.length - idx);
-          for (var p = 0; p < piecesInRow; p++) {
-            var spec = pat[p];
-            var t = list[idx];
-            idx++;
-
-            var piece = document.createElement('a');
-            piece.href = slug(t);
-            piece.className = 'g-piece';
-            piece.style.width = spec.w + '%';
-            if (spec.ml) piece.style.marginLeft = spec.ml + '%';
-            if (spec.mr) piece.style.marginRight = spec.mr + '%';
-
-            piece.innerHTML =
-              '<div class="g-art-wrap"><img class="g-art" src="' + full(t) + '" alt="' + t.artist + ' – ' + t.title + '" loading="lazy"></div>'
-              + '<div class="g-label">'
-              +   '<div class="g-label-artist">' + t.artist + '</div>'
-              +   '<div class="g-label-title">' + t.title + '</div>'
-              +   '<div class="g-label-date">' + (t.year || '') + '</div>'
-              +   '<div class="g-label-medium">Featured ' + fmtDate(t) + '</div>'
-              + '</div>';
-
-            row.appendChild(piece);
-          }
-
-          wall.appendChild(row);
-          patIdx++;
-        }
+        buildGallery(list);
+        buildCalendar(list);
       });
+
+
+    /* ══════ GALLERY ══════ */
+    function buildGallery(list) {
+      var wall = document.getElementById('wall');
+      var patterns = [
+        [{ w: 55, ml: 0 }],
+        [{ w: 25, ml: 4 }, { w: 38, ml: 12 }],
+        [{ w: 48, ml: 26 }],
+        [{ w: 20, ml: 0 }, { w: 22, ml: 6 }, { w: 32, ml: 8 }],
+        [{ w: 50, ml: 40 }],
+        [{ w: 36, ml: 0 }, { w: 22, ml: 16 }],
+      ];
+
+      var idx = 0, patIdx = 0;
+      while (idx < list.length) {
+        var pat = patterns[patIdx % patterns.length];
+        var row = document.createElement('div');
+        row.className = 'g-row';
+
+        var count = Math.min(pat.length, list.length - idx);
+        for (var p = 0; p < count; p++) {
+          var spec = pat[p];
+          var t = list[idx++];
+          var piece = document.createElement('a');
+          piece.href = slug(t);
+          piece.className = 'g-piece';
+          piece.style.width = spec.w + '%';
+          if (spec.ml) piece.style.marginLeft = spec.ml + '%';
+
+          piece.innerHTML =
+            '<div class="g-art-wrap"><img class="g-art" src="' + full(t) + '" alt="' + t.artist + ' \u2013 ' + t.title + '" loading="lazy"></div>'
+            + '<div class="g-label">'
+            +   '<div class="g-label-artist">' + t.artist + '</div>'
+            +   '<div class="g-label-title">' + t.title + '</div>'
+            +   '<div class="g-label-date">' + (t.year || '') + '</div>'
+            +   '<div class="g-label-medium">Featured ' + fmtDate(t) + '</div>'
+            + '</div>';
+
+          row.appendChild(piece);
+        }
+        wall.appendChild(row);
+        patIdx++;
+      }
+    }
+
+
+    /* ══════ CALENDAR ══════ */
+    function buildCalendar(list) {
+      var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var byDate = {};
+      list.forEach(function (t) { byDate[t.date] = t; });
+
+      var months = {};
+      list.forEach(function (t) { months[t.date.substring(0, 7)] = true; });
+      var monthKeys = Object.keys(months).sort().reverse();
+
+      var today = new Date();
+      var todayStr = today.getFullYear() + '-'
+        + String(today.getMonth() + 1).padStart(2, '0') + '-'
+        + String(today.getDate()).padStart(2, '0');
+
+      var container = document.getElementById('calendar');
+
+      monthKeys.forEach(function (key) {
+        var parts = key.split('-');
+        var year = parseInt(parts[0], 10);
+        var month = parseInt(parts[1], 10) - 1;
+        var firstDay = new Date(year, month, 1);
+        var daysInMonth = new Date(year, month + 1, 0).getDate();
+        var startDow = firstDay.getDay();
+
+        var section = document.createElement('div');
+        section.className = 'cal-month';
+
+        var label = document.createElement('div');
+        label.className = 'cal-month-label';
+        label.textContent = firstDay.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        section.appendChild(label);
+
+        var header = document.createElement('div');
+        header.className = 'cal-header';
+        DAYS.forEach(function (d) {
+          var div = document.createElement('div');
+          div.textContent = d;
+          header.appendChild(div);
+        });
+        section.appendChild(header);
+
+        var grid = document.createElement('div');
+        grid.className = 'cal-grid';
+
+        for (var i = 0; i < startDow; i++) {
+          var empty = document.createElement('div');
+          empty.className = 'cal-cell empty';
+          grid.appendChild(empty);
+        }
+
+        for (var day = 1; day <= daysInMonth; day++) {
+          var dateStr = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+          var album = byDate[dateStr];
+          var cell = document.createElement('div');
+          cell.className = 'cal-cell';
+          if (album) cell.className += ' has-album';
+          if (dateStr === todayStr) cell.className += ' today';
+
+          var num = document.createElement('div');
+          num.className = 'day-num';
+          num.textContent = day;
+          cell.appendChild(num);
+
+          if (album) {
+            var s = slug(album);
+            var link = document.createElement('a');
+            link.href = s;
+            var img = document.createElement('img');
+            img.src = thumb(album);
+            img.alt = album.artist + ' \u2013 ' + album.title;
+            img.loading = 'lazy';
+            link.appendChild(img);
+            cell.appendChild(link);
+
+            var tip = document.createElement('div');
+            tip.className = 'cal-tooltip';
+            tip.innerHTML = '<div class="tip-title">' + album.title + '</div>'
+              + '<div class="tip-artist">' + album.artist + '</div>';
+            cell.appendChild(tip);
+          }
+          grid.appendChild(cell);
+        }
+
+        section.appendChild(grid);
+        container.appendChild(section);
+      });
+    }
   </script>
 </body>
 </html>

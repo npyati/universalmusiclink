@@ -102,6 +102,7 @@ Prepend a new object to the top of the `schedule` array in `featured.json`:
   "date": "YYYY-MM-DD",
   "artist": "{Artist}",
   "title": "{Album}",
+  "year": {release_year},
   "image": "{spotify_image_url}",
   "url": "https://npyati.github.io/universalmusiclink/{directory}/",
   "services": {
@@ -128,5 +129,6 @@ Stage both files: `featured.json` and `{directory}/index.html`.
 - [ ] Spotify image URL uses the `ab67616d0000b273` prefix (full-size)
 - [ ] Directory name is lowercase kebab-case
 - [ ] `featured.json` entry date is correct
+- [ ] `featured.json` entry includes `year` (original album release year, integer)
 - [ ] `index.html` uses `–` (en dash) between artist and album in title/meta/alt
 - [ ] Commit message follows `AOTD M/D/YY` format
