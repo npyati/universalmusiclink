@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-06",
+      "artist": "Radiohead",
+      "title": "Kid A",
+      "year": 2000,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736c7112082b63beefffe40151",
+      "url": "https://npyati.github.io/universalmusiclink/radiohead-kid-a/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/6GjwtEZcfenmOf6l18N7T7",
+        "apple_music": "https://music.apple.com/us/album/kid-a/1097862870",
+        "youtube_music": "https://music.youtube.com/search?q=Radiohead+Kid+A",
+        "tidal": "https://tidal.com/browse/album/58990523",
+        "amazon_music": "https://music.amazon.com/albums/B01DPRPYH8"
+      }
+    },
+    {
       "date": "2026-04-05",
       "artist": "John Coltrane",
       "title": "A Love Supreme",
