@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-05",
+      "artist": "John Coltrane",
+      "title": "A Love Supreme",
+      "year": 1965,
+      "image": "https://i.scdn.co/image/ab67616d0000b273ea42191f549dce4d9c8ecd1a",
+      "url": "https://npyati.github.io/universalmusiclink/john-coltrane-a-love-supreme/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/7Eoz7hJvaX1eFkbpQxC5PA",
+        "apple_music": "https://music.apple.com/us/album/a-love-supreme/1440713018",
+        "youtube_music": "https://music.youtube.com/search?q=John+Coltrane+A+Love+Supreme",
+        "tidal": "https://tidal.com/album/77609729",
+        "amazon_music": "https://music.amazon.com/albums/B000V698WE"
+      }
+    },
+    {
       "date": "2026-04-02",
       "artist": "Mdou Moctar",
       "title": "Afrique Victime",
