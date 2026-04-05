@@ -219,17 +219,24 @@
       body { padding: 32px 16px 60px; }
       .view-toggle { margin-bottom: 24px; }
       .g-row {
-        flex-wrap: wrap; gap: 40px; margin-bottom: 40px;
+        display: flex; flex-wrap: wrap;
+        gap: 24px; margin-bottom: 24px;
+        margin-left: 0 !important;
       }
       .g-piece {
         flex-direction: column; align-items: flex-start;
         margin-left: 0 !important; margin-right: 0 !important;
       }
       .g-label { width: auto; max-width: none; }
-      .g-row .g-piece:only-child { width: 75% !important; }
-      .g-row .g-piece:first-child:not(:only-child) { width: 58% !important; }
-      .g-row .g-piece:nth-child(2) { width: 34% !important; }
-      .g-row .g-piece:nth-child(3) { width: 45% !important; }
+      /* Alternating mobile patterns via nth-child on rows */
+      /* Row with 1 item: alternate between wide-left and medium-right */
+      .g-row:nth-child(odd) .g-piece:only-child { width: 80% !important; margin-left: 0 !important; }
+      .g-row:nth-child(even) .g-piece:only-child { width: 65% !important; margin-left: auto !important; }
+      /* Row with 2 items: side by side */
+      .g-row .g-piece:first-child:not(:only-child) { width: 48% !important; }
+      .g-row .g-piece:nth-child(2) { width: 40% !important; }
+      /* Row with 3 items: two small + one medium below */
+      .g-row .g-piece:nth-child(3) { width: 55% !important; margin-left: auto !important; }
     }
   </style>
 </head>
