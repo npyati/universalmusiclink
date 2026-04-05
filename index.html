@@ -389,7 +389,8 @@
 
         var label = document.createElement('div');
         label.className = 'cal-month-label';
-        label.textContent = firstDay.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        var monthStr = firstDay.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        label.textContent = monthStr.charAt(0).toLowerCase() + monthStr.slice(1);
         section.appendChild(label);
 
         var header = document.createElement('div');
