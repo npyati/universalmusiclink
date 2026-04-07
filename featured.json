@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-07",
+      "artist": "Víkingur Ólafsson",
+      "title": "Philip Glass: Piano Works",
+      "year": 2017,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d2c404651e4f654f171778d4",
+      "url": "https://npyati.github.io/universalmusiclink/vikingur-olafsson-philip-glass-piano-works/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4WMVFHCPiUEurlsWDF1Deq",
+        "apple_music": "https://music.apple.com/us/album/philip-glass-piano-works/1440800912",
+        "youtube_music": "https://music.youtube.com/search?q=Vikingur+Olafsson+Philip+Glass+Piano+Works",
+        "tidal": "https://tidal.com/browse/album/77615077",
+        "amazon_music": "https://music.amazon.com/albums/B01N6G1TWM"
+      }
+    },
+    {
       "date": "2026-04-06",
       "artist": "Radiohead",
       "title": "Kid A",
