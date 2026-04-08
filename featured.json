@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-08",
+      "artist": "Steve Reich",
+      "title": "Music for 18 Musicians",
+      "year": 1978,
+      "image": "https://i.scdn.co/image/ab67616d0000b27394f0aabe0bf654318e339c6a",
+      "url": "https://npyati.github.io/universalmusiclink/steve-reich-music-for-18-musicians/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/536QTsVznT8vli2Pv8PQ2T",
+        "apple_music": "https://music.apple.com/us/album/reich-music-for-18-musicians/1452312720",
+        "youtube_music": "https://music.youtube.com/search?q=Steve+Reich+Music+for+18+Musicians",
+        "tidal": "https://tidal.com/browse/album/17459283",
+        "amazon_music": "https://music.amazon.com/albums/B000XUHWO4"
+      }
+    },
+    {
       "date": "2026-04-07",
       "artist": "Víkingur Ólafsson",
       "title": "Philip Glass: Piano Works",
