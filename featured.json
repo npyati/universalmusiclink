@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-17",
+      "artist": "Khruangbin",
+      "title": "Con Todo El Mundo",
+      "year": 2018,
+      "image": "https://i.scdn.co/image/ab67616d0000b27312db5c86831c0ee134ea3ba3",
+      "url": "https://npyati.github.io/universalmusiclink/khruangbin-con-todo-el-mundo/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/42j41uUwuHZT3bnedq2XtM",
+        "apple_music": "https://music.apple.com/us/album/con-todo-el-mundo/1299241642",
+        "youtube_music": "https://music.youtube.com/search?q=Khruangbin+Con+Todo+El+Mundo",
+        "tidal": "https://tidal.com/browse/album/82882611",
+        "amazon_music": "https://music.amazon.com/albums/B076HMG25S"
+      }
+    },
+    {
       "date": "2026-04-10",
       "artist": "Nina Simone",
       "title": "Wild is the Wind",
