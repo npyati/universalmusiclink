@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-19",
+      "artist": "D'Angelo",
+      "title": "Voodoo",
+      "year": 2000,
+      "image": "https://i.scdn.co/image/ab67616d0000b273963416bf0f5fb7373d412780",
+      "url": "https://npyati.github.io/universalmusiclink/dangelo-voodoo/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2lO9yuuIDgBpSJzxTh3ai8",
+        "apple_music": "https://music.apple.com/us/album/voodoo/1440841365",
+        "youtube_music": "https://music.youtube.com/search?q=D%27Angelo+Voodoo",
+        "tidal": "https://tidal.com/browse/album/68338517",
+        "amazon_music": "https://music.amazon.com/albums/B01MSZLWKM"
+      }
+    },
+    {
       "date": "2026-04-17",
       "artist": "Khruangbin",
       "title": "Con Todo El Mundo",
