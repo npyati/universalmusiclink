@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-21",
+      "artist": "Sam Cooke",
+      "title": "Live at the Harlem Square Club, 1963",
+      "year": 1985,
+      "image": "https://i.scdn.co/image/ab67616d0000b273cada54c15af0a1da882f08f9",
+      "url": "https://npyati.github.io/universalmusiclink/sam-cooke-live-at-the-harlem-square-club-1963/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/3nTXqOEHr6AfTb1WSaB4Pm",
+        "apple_music": "https://music.apple.com/us/album/one-night-stand-live-at-the-harlem-square-club-1963/304822401",
+        "youtube_music": "https://music.youtube.com/search?q=Sam+Cooke+Live+at+the+Harlem+Square+Club+1963",
+        "tidal": "https://tidal.com/browse/album/32570576",
+        "amazon_music": "https://music.amazon.com/albums/B002PL4KIA"
+      }
+    },
+    {
       "date": "2026-04-20",
       "artist": "STRFKR",
       "title": "Future Past Life",
