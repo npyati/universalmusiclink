@@ -361,7 +361,7 @@
 
     /* ══════ CALENDAR ══════ */
     function buildCalendar(list) {
-      var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
       var byDate = {};
       list.forEach(function (t) { byDate[t.date] = t; });
 
@@ -382,7 +382,7 @@
         var month = parseInt(parts[1], 10) - 1;
         var firstDay = new Date(year, month, 1);
         var daysInMonth = new Date(year, month + 1, 0).getDate();
-        var startDow = firstDay.getDay();
+        var startDow = (firstDay.getDay() + 6) % 7;
 
         var section = document.createElement('div');
         section.className = 'cal-month';
