@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-20",
+      "artist": "STRFKR",
+      "title": "Future Past Life",
+      "year": 2020,
+      "image": "https://i.scdn.co/image/ab67616d0000b27304b860cd508a2e4cce424b6c",
+      "url": "https://npyati.github.io/universalmusiclink/strfkr-future-past-life/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4CYTuBxwkq2ONPJZ5JVMCn",
+        "apple_music": "https://music.apple.com/us/album/future-past-life/1651286984",
+        "youtube_music": "https://music.youtube.com/search?q=STRFKR+Future+Past+Life",
+        "tidal": "https://tidal.com/browse/album/256080304",
+        "amazon_music": "https://music.amazon.com/albums/B0BKDSLPYP"
+      }
+    },
+    {
       "date": "2026-04-19",
       "artist": "D'Angelo",
       "title": "Voodoo",
