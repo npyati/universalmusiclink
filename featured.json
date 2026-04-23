@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-23",
+      "artist": "DJ Shadow",
+      "title": "Endtroducing.....",
+      "year": 1996,
+      "image": "https://i.scdn.co/image/ab67616d0000b2738ce8e9530b875fb9d01a11d8",
+      "url": "https://npyati.github.io/universalmusiclink/dj-shadow-endtroducing/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4wvqGLk1HThPA0b5lzRK2l",
+        "apple_music": "https://music.apple.com/us/album/endtroducing/1660485817",
+        "youtube_music": "https://music.youtube.com/search?q=DJ+Shadow+Endtroducing",
+        "tidal": "https://tidal.com/browse/album/269088401",
+        "amazon_music": "https://music.amazon.com/albums/B0BQHCT585"
+      }
+    },
+    {
       "date": "2026-04-21",
       "artist": "Sam Cooke",
       "title": "Live at the Harlem Square Club, 1963",
