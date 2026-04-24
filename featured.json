@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-24",
+      "artist": "J Dilla",
+      "title": "Donuts",
+      "year": 2006,
+      "image": "https://i.scdn.co/image/ab67616d0000b27383bb78285449998bb974da45",
+      "url": "https://npyati.github.io/universalmusiclink/j-dilla-donuts/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5fMlysqhFE0itGn4KezMBW",
+        "apple_music": "https://music.apple.com/us/album/donuts/108233171",
+        "youtube_music": "https://music.youtube.com/search?q=J+Dilla+Donuts",
+        "tidal": "https://tidal.com/browse/album/185776357",
+        "amazon_music": "https://music.amazon.com/albums/B0787Y1MJH"
+      }
+    },
+    {
       "date": "2026-04-23",
       "artist": "DJ Shadow",
       "title": "Endtroducing.....",
