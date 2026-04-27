@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-27",
+      "artist": "Howlin' Wolf",
+      "title": "The London Howlin' Wolf Sessions",
+      "year": 1971,
+      "image": "https://i.scdn.co/image/ab67616d0000b273fe4635bdf0b4d60ba7d47044",
+      "url": "https://npyati.github.io/universalmusiclink/howlin-wolf-the-london-howlin-wolf-sessions/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0ofc7MShxTRYCAXt7zdCse",
+        "apple_music": "https://music.apple.com/us/album/the-london-howlin-wolf-sessions-reissue-feat-eric/1423330493",
+        "youtube_music": "https://music.youtube.com/search?q=Howlin+Wolf+The+London+Howlin+Wolf+Sessions",
+        "tidal": "https://tidal.com/browse/album/93240345",
+        "amazon_music": "https://music.amazon.com/albums/B07G964FSH"
+      }
+    },
+    {
       "date": "2026-04-25",
       "artist": "Madlib",
       "title": "Shades of Blue",
