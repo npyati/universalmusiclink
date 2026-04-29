@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-04-29",
+      "artist": "The Beatles",
+      "title": "The Beatles (The White Album)",
+      "year": 1968,
+      "image": "https://i.scdn.co/image/ab67616d0000b2739daf50d073fd6e7ad9bc0076",
+      "url": "https://npyati.github.io/universalmusiclink/the-beatles-white-album/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/1WMVvswNzB9i2UMh9svso5",
+        "apple_music": "https://music.apple.com/us/album/the-beatles-the-white-album/1441133180",
+        "youtube_music": "https://music.youtube.com/search?q=The+Beatles+White+Album+2018+Mix",
+        "tidal": "https://tidal.com/browse/album/97872030",
+        "amazon_music": "https://music.amazon.com/albums/B07HJHQT42"
+      }
+    },
+    {
       "date": "2026-04-27",
       "artist": "Howlin' Wolf",
       "title": "The London Howlin' Wolf Sessions",
