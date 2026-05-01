@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-05-01",
+      "artist": "The Beatles",
+      "title": "Magical Mystery Tour",
+      "year": 1967,
+      "image": "https://i.scdn.co/image/ab67616d0000b273692d9189b2bd75525893f0c1",
+      "url": "https://npyati.github.io/universalmusiclink/the-beatles-magical-mystery-tour/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2BtE7qm1qzM80p9vLSiXkj",
+        "apple_music": "https://music.apple.com/us/album/magical-mystery-tour/1441163490",
+        "youtube_music": "https://music.youtube.com/search?q=The+Beatles+Magical+Mystery+Tour",
+        "tidal": "https://tidal.com/browse/album/55130767",
+        "amazon_music": "https://music.amazon.com/albums/B07FT1NWL6"
+      }
+    },
+    {
       "date": "2026-04-29",
       "artist": "The Beatles",
       "title": "The Beatles (The White Album)",
