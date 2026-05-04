@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-05-04",
+      "artist": "Pete Rock & CL Smooth",
+      "title": "Mecca and the Soul Brother",
+      "year": 1992,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d535e6a05ec517c25a232f43",
+      "url": "https://npyati.github.io/universalmusiclink/pete-rock-cl-smooth-mecca-and-the-soul-brother/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2AgTKAULjbHpqqtyI53hdp",
+        "apple_music": "https://music.apple.com/us/album/mecca-and-the-soul-brother/217508870",
+        "youtube_music": "https://music.youtube.com/search?q=Pete+Rock+CL+Smooth+Mecca+and+the+Soul+Brother",
+        "tidal": "https://tidal.com/browse/album/393618",
+        "amazon_music": "https://music.amazon.com/albums/B0011ZYF04"
+      }
+    },
+    {
       "date": "2026-05-01",
       "artist": "The Beatles",
       "title": "Magical Mystery Tour",
