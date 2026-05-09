@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-05-08",
+      "artist": "The Roots",
+      "title": "Things Fall Apart",
+      "year": 1999,
+      "image": "https://i.scdn.co/image/ab67616d0000b273bac8015c7e47644fb86e27e2",
+      "url": "https://npyati.github.io/universalmusiclink/the-roots-things-fall-apart/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0qbl8aNaCUOvX8HGsZYLfh",
+        "apple_music": "https://music.apple.com/us/album/things-fall-apart/1440632803",
+        "youtube_music": "https://music.youtube.com/search?q=The+Roots+Things+Fall+Apart",
+        "tidal": "https://tidal.com/browse/album/35712362",
+        "amazon_music": "https://music.amazon.com/albums/B002IV5BFS"
+      }
+    },
+    {
       "date": "2026-05-06",
       "artist": "Blondie",
       "title": "Eat to the Beat",
