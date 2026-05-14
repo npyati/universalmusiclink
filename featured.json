@@ -1,6 +1,51 @@
 {
   "schedule": [
     {
+      "date": "2026-05-15",
+      "artist": "Sister Nancy",
+      "title": "One Two",
+      "year": 1982,
+      "image": "https://i.scdn.co/image/ab67616d0000b2738392d4cc778c7a1f6fbed8f3",
+      "url": "https://npyati.github.io/universalmusiclink/sister-nancy-one-two/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4H9eL5O62tZRXwksrtMQfN",
+        "apple_music": "https://music.apple.com/us/album/one-two/1799637929",
+        "youtube_music": "https://music.youtube.com/search?q=Sister+Nancy+One+Two",
+        "tidal": "https://tidal.com/browse/album/421050354",
+        "amazon_music": "https://music.amazon.com/albums/B0DYV63VM3"
+      }
+    },
+    {
+      "date": "2026-05-14",
+      "artist": "Mary Lou Williams",
+      "title": "Mary Lou Williams",
+      "year": 1964,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f2aee955ec9b398f4f1af2d1",
+      "url": "https://npyati.github.io/universalmusiclink/mary-lou-williams-mary-lou-williams/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2TNeh3Lk8a50SG8ysZiOpW",
+        "apple_music": "https://music.apple.com/us/album/mary-lou-williams-presents-black-christ-of-the-andes/262208338",
+        "youtube_music": "https://music.youtube.com/search?q=Mary+Lou+Williams+Mary+Lou+Williams",
+        "tidal": "https://tidal.com/browse/album/45548911",
+        "amazon_music": "https://music.amazon.com/albums/B000RKGPVG"
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "artist": "Charles Mingus",
+      "title": "Mingus Ah Um",
+      "year": 1959,
+      "image": "https://i.scdn.co/image/ab67616d0000b273aa397a43547cd41e228a3063",
+      "url": "https://npyati.github.io/universalmusiclink/charles-mingus-mingus-ah-um/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/7pojWP7x9uEFSJgw765khA",
+        "apple_music": "https://music.apple.com/us/album/mingus-ah-um/636353127",
+        "youtube_music": "https://music.youtube.com/search?q=Charles+Mingus+Mingus+Ah+Um",
+        "tidal": "https://tidal.com/browse/album/1274015",
+        "amazon_music": "https://music.amazon.com/albums/B00138JAI6"
+      }
+    },
+    {
       "date": "2026-05-08",
       "artist": "The Roots",
       "title": "Things Fall Apart",
