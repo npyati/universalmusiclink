@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-05-18",
+      "artist": "STRFKR",
+      "title": "Reptilians",
+      "year": 2011,
+      "image": "https://i.scdn.co/image/ab67616d0000b2737cd73347c24c0797700dec4e",
+      "url": "https://npyati.github.io/universalmusiclink/strfkr-reptilians/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5pfqk4oFycMVynOD8S2Cqs",
+        "apple_music": "https://music.apple.com/us/album/reptilians/408812736",
+        "youtube_music": "https://music.youtube.com/search?q=STRFKR+Reptilians",
+        "tidal": "https://tidal.com/browse/album/22622754",
+        "amazon_music": "https://music.amazon.com/albums/B004PTA4Q2"
+      }
+    },
+    {
       "date": "2026-05-15",
       "artist": "Sister Nancy",
       "title": "One Two",
