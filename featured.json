@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-05-20",
+      "artist": "John Lennon & Yoko Ono",
+      "title": "Double Fantasy",
+      "year": 1980,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730488a5c4e21edc24526652ae",
+      "url": "https://npyati.github.io/universalmusiclink/john-lennon-yoko-ono-double-fantasy/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/1NWA2fPLUAW5df7UGI5thp",
+        "apple_music": "https://music.apple.com/us/album/double-fantasy/1440847446",
+        "youtube_music": "https://music.youtube.com/search?q=John+Lennon+Yoko+Ono+Double+Fantasy",
+        "tidal": "https://tidal.com/browse/album/58754764",
+        "amazon_music": "https://music.amazon.com/albums/B01DEQZUIS"
+      }
+    },
+    {
       "date": "2026-05-18",
       "artist": "STRFKR",
       "title": "Reptilians",
