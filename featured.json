@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-05-21",
+      "artist": "Stevie Wonder",
+      "title": "Innervisions",
+      "year": 1973,
+      "image": "https://i.scdn.co/image/ab67616d0000b273ea8ab1a548312b79ac955266",
+      "url": "https://npyati.github.io/universalmusiclink/stevie-wonder-innervisions/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5jgI8Eminx9MmLBontDWq8",
+        "apple_music": "https://music.apple.com/us/album/innervisions/1440806790",
+        "youtube_music": "https://music.youtube.com/search?q=Stevie+Wonder+Innervisions",
+        "tidal": "https://tidal.com/browse/album/77666298",
+        "amazon_music": "https://music.amazon.com/albums/B000V63D02"
+      }
+    },
+    {
       "date": "2026-05-20",
       "artist": "John Lennon & Yoko Ono",
       "title": "Double Fantasy",
