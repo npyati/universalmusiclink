@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-06-08",
+      "artist": "Cymande",
+      "title": "Cymande",
+      "year": 1972,
+      "image": "https://i.scdn.co/image/ab67616d0000b27395e10e5482f14f7487427fa7",
+      "url": "https://npyati.github.io/universalmusiclink/cymande-cymande/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/3LNGh5hT6VWrM9On6WfqKv",
+        "apple_music": "https://music.apple.com/us/album/cymande/1783165176",
+        "youtube_music": "https://music.youtube.com/search?q=Cymande+Cymande",
+        "tidal": "https://tidal.com/browse/album/403424227",
+        "amazon_music": "https://music.amazon.com/albums/B0DPJQ2DB2"
+      }
+    },
+    {
       "date": "2026-05-21",
       "artist": "Stevie Wonder",
       "title": "Innervisions",
