@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-06-17",
+      "artist": "Isaac Hayes",
+      "title": "Hot Buttered Soul",
+      "year": 1969,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736c3db7e63a6f392a678635ba",
+      "url": "https://npyati.github.io/universalmusiclink/isaac-hayes-hot-buttered-soul/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/71rxIr6MJYUzDG9ge6Jq3J",
+        "apple_music": "https://music.apple.com/us/album/hot-buttered-soul/1440941776",
+        "youtube_music": "https://music.youtube.com/search?q=Isaac+Hayes+Hot+Buttered+Soul",
+        "tidal": "https://tidal.com/browse/album/77669801",
+        "amazon_music": "https://music.amazon.com/albums/B01N3CSCZQ"
+      }
+    },
+    {
       "date": "2026-06-08",
       "artist": "Cymande",
       "title": "Cymande",
