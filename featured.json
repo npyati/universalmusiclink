@@ -1,6 +1,36 @@
 {
   "schedule": [
     {
+      "date": "2026-06-22",
+      "artist": "Mac Miller",
+      "title": "Swimming",
+      "year": 2018,
+      "image": "https://i.scdn.co/image/ab67616d0000b273175c577a61aa13d4fb4b6534",
+      "url": "https://npyati.github.io/universalmusiclink/mac-miller-swimming/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk",
+        "apple_music": "https://music.apple.com/us/album/swimming/1408996052",
+        "youtube_music": "https://music.youtube.com/search?q=Mac+Miller+Swimming",
+        "tidal": "https://tidal.com/browse/album/92662426",
+        "amazon_music": "https://music.amazon.com/albums/B07VYHNYCF"
+      }
+    },
+    {
+      "date": "2026-06-21",
+      "artist": "Thundercat",
+      "title": "Drunk",
+      "year": 2017,
+      "image": "https://i.scdn.co/image/ab67616d0000b27385c5e6c686ced3e43bae2748",
+      "url": "https://npyati.github.io/universalmusiclink/thundercat-drunk/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/7vHBQDqwzB7uDvoE5bncMM",
+        "apple_music": "https://music.apple.com/us/album/drunk/1197789099",
+        "youtube_music": "https://music.youtube.com/search?q=Thundercat+Drunk",
+        "tidal": "https://tidal.com/browse/album/69721913",
+        "amazon_music": "https://music.amazon.com/albums/B073JYYZ9V"
+      }
+    },
+    {
       "date": "2026-06-18",
       "artist": "Stereolab",
       "title": "Instant Holograms on Metal Film",
