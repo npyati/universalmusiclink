@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-06-23",
+      "artist": "Flying Lotus",
+      "title": "Cosmogramma",
+      "year": 2010,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736e6fdc42d62db60641b9cb46",
+      "url": "https://npyati.github.io/universalmusiclink/flying-lotus-cosmogramma/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5EnERG2QBlF6Z0BrUjEcF4",
+        "apple_music": "https://music.apple.com/us/album/cosmogramma/367788829",
+        "youtube_music": "https://music.youtube.com/search?q=Flying+Lotus+Cosmogramma",
+        "tidal": "https://tidal.com/browse/album/16025624",
+        "amazon_music": "https://music.amazon.com/albums/B003F1J8CC"
+      }
+    },
+    {
       "date": "2026-06-22",
       "artist": "Mac Miller",
       "title": "Swimming",
