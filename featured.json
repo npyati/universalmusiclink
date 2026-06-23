@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-06-24",
+      "artist": "Lord Echo",
+      "title": "Harmonies",
+      "year": 2017,
+      "image": "https://i.scdn.co/image/ab67616d0000b27365550fa0c7b021ac77983567",
+      "url": "https://npyati.github.io/universalmusiclink/lord-echo-harmonies/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/7H92t4WtiRDomQqY1g6MZr",
+        "apple_music": "https://music.apple.com/us/album/harmonies/1612408559",
+        "youtube_music": "https://music.youtube.com/search?q=Lord+Echo+Harmonies",
+        "tidal": "https://tidal.com/browse/album/219209801",
+        "amazon_music": "https://music.amazon.com/albums/B09TQRZV49"
+      }
+    },
+    {
       "date": "2026-06-23",
       "artist": "Flying Lotus",
       "title": "Cosmogramma",
