@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-06-25",
+      "artist": "Lizzo",
+      "title": "Bitch",
+      "year": 2026,
+      "image": "https://i.scdn.co/image/ab67616d0000b273641d09ed0851bbee10828e49",
+      "url": "https://npyati.github.io/universalmusiclink/lizzo-bitch/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2wPyRw9iR2TQQgc8c5NCUk",
+        "apple_music": "https://music.apple.com/us/album/bitch/1895402771",
+        "youtube_music": "https://music.youtube.com/search?q=Lizzo+Bitch",
+        "tidal": "https://tidal.com/browse/album/528785117",
+        "amazon_music": "https://music.amazon.com/albums/B0GYSX2C95"
+      }
+    },
+    {
       "date": "2026-06-24",
       "artist": "Lord Echo",
       "title": "Harmonies",
