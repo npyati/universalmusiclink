@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-07-06",
+      "artist": "Roberta Flack",
+      "title": "First Take",
+      "year": 1969,
+      "image": "https://i.scdn.co/image/ab67616d0000b273685f8851f3be611c386c7cc0",
+      "url": "https://npyati.github.io/universalmusiclink/roberta-flack-first-take/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2ARWEOvaUgm4FSj25MpY6F",
+        "apple_music": "https://music.apple.com/us/album/first-take/355178034",
+        "youtube_music": "https://music.youtube.com/search?q=Roberta+Flack+First+Take",
+        "tidal": "https://tidal.com/browse/album/68685529",
+        "amazon_music": "https://music.amazon.com/albums/B07VXKB7G5"
+      }
+    },
+    {
       "date": "2026-07-04",
       "artist": "Cymande",
       "title": "Promised Heights",
