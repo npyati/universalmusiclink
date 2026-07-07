@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-07-07",
+      "artist": "Bob James",
+      "title": "One",
+      "year": 1974,
+      "image": "https://i.scdn.co/image/ab67616d0000b2734b546e2827e748379037aefc",
+      "url": "https://npyati.github.io/universalmusiclink/bob-james-one/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/61bwq2HbU69Ig5nTbtRBS5",
+        "apple_music": "https://music.apple.com/us/album/one/1398228402",
+        "youtube_music": "https://music.youtube.com/search?q=Bob+James+One",
+        "tidal": "https://tidal.com/browse/album/90426627",
+        "amazon_music": "https://music.amazon.com/albums/B096ZQGZL9"
+      }
+    },
+    {
       "date": "2026-07-06",
       "artist": "Roberta Flack",
       "title": "First Take",
