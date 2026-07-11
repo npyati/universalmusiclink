@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-07-11",
+      "artist": "Lonnie Liston Smith",
+      "title": "Expansions",
+      "year": 1975,
+      "image": "https://i.scdn.co/image/ab67616d0000b27331f5898542f18da0488f79b1",
+      "url": "https://npyati.github.io/universalmusiclink/lonnie-liston-smith-expansions/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/7p96a8I3q2MRN5Ely3WiVm",
+        "apple_music": "https://music.apple.com/us/album/expansions/1621356607",
+        "youtube_music": "https://music.youtube.com/search?q=Lonnie+Liston+Smith+Expansions",
+        "tidal": "https://tidal.com/browse/album/226619096",
+        "amazon_music": "https://music.amazon.com/albums/B09Z171XLZ"
+      }
+    },
+    {
       "date": "2026-07-07",
       "artist": "Bob James",
       "title": "One",
