@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-07-13",
+      "artist": "Jimi Hendrix",
+      "title": "Electric Ladyland",
+      "year": 1968,
+      "image": "https://i.scdn.co/image/ab67616d0000b273522088789d49e216d9818292",
+      "url": "https://npyati.github.io/universalmusiclink/jimi-hendrix-electric-ladyland/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5z090LQztiqh13wYspQvKQ",
+        "apple_music": "https://music.apple.com/us/album/electric-ladyland/357652252",
+        "youtube_music": "https://music.youtube.com/search?q=Jimi+Hendrix+Electric+Ladyland",
+        "tidal": "https://tidal.com/browse/album/3254283",
+        "amazon_music": "https://music.amazon.com/albums/B003B17YZE"
+      }
+    },
+    {
       "date": "2026-07-11",
       "artist": "Lonnie Liston Smith",
       "title": "Expansions",
