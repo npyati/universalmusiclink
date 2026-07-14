@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-07-15",
+      "artist": "Sugar Candy Mountain",
+      "title": "666",
+      "year": 2016,
+      "image": "https://i.scdn.co/image/ab67616d0000b273929c599271c20541811d4031",
+      "url": "https://npyati.github.io/universalmusiclink/sugar-candy-mountain-666/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0Y9pFvtCR52aFUxJfKjTMB",
+        "apple_music": "https://music.apple.com/us/album/666/1124966682",
+        "youtube_music": "https://music.youtube.com/search?q=Sugar+Candy+Mountain+666",
+        "tidal": "https://tidal.com/browse/album/62192064",
+        "amazon_music": "https://music.amazon.com/albums/B01HC09DKI"
+      }
+    },
+    {
       "date": "2026-07-14",
       "artist": "Allah-Las",
       "title": "Calico Review",
