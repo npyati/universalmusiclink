@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-08-07",
+      "artist": "Prince",
+      "title": "Batman",
+      "year": 1989,
+      "image": "https://i.scdn.co/image/ab67616d0000b273dd64809bbf416dde80e80f99",
+      "url": "https://npyati.github.io/universalmusiclink/prince-batman/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/2FwzHgJ4XaPhC19Y0uL6SK",
+        "apple_music": "https://music.apple.com/us/album/batman/213038820",
+        "youtube_music": "https://music.youtube.com/search?q=Prince+Batman",
+        "tidal": "https://tidal.com/browse/album/271478",
+        "amazon_music": "https://music.amazon.com/albums/B001R7VHKC"
+      }
+    },
+    {
       "date": "2026-07-15",
       "artist": "Sugar Candy Mountain",
       "title": "666",
