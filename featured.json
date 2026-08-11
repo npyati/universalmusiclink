@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-08-11",
+      "artist": "Georgia Harmer",
+      "title": "Stay In Touch",
+      "year": 2022,
+      "image": "https://i.scdn.co/image/ab67616d0000b27388bfbcd8da91829e9ef85428",
+      "url": "https://npyati.github.io/universalmusiclink/georgia-harmer-stay-in-touch/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/3FocbWHJtfvMRhUWmhJTh4",
+        "apple_music": "https://music.apple.com/us/album/stay-in-touch/1610622403",
+        "youtube_music": "https://music.youtube.com/search?q=Georgia+Harmer+Stay+In+Touch",
+        "tidal": "https://tidal.com/browse/album/225087569",
+        "amazon_music": "https://music.amazon.com/albums/B09SS61QTJ"
+      }
+    },
+    {
       "date": "2026-08-07",
       "artist": "Prince",
       "title": "Batman",
