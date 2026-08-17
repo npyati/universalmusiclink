@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-08-17",
+      "artist": "Van Morrison",
+      "title": "Moondance",
+      "year": 1970,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d828b182ee9b7193a0f8b5d6",
+      "url": "https://npyati.github.io/universalmusiclink/van-morrison-moondance/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5PfnCqRbdfIDMb1x3MPQam",
+        "apple_music": "https://music.apple.com/us/album/moondance/712727450",
+        "youtube_music": "https://music.youtube.com/search?q=Van+Morrison+Moondance",
+        "tidal": "https://tidal.com/browse/album/22968233",
+        "amazon_music": "https://music.amazon.com/albums/B00FR0MM5Y"
+      }
+    },
+    {
       "date": "2026-08-11",
       "artist": "Georgia Harmer",
       "title": "Stay In Touch",
