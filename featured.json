@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-08-18",
+      "artist": "Sly & The Family Stone",
+      "title": "Small Talk",
+      "year": 1974,
+      "image": "https://i.scdn.co/image/ab67616d0000b273c7f4b5eff1d481438b6b289c",
+      "url": "https://npyati.github.io/universalmusiclink/sly-the-family-stone-small-talk/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/1KJAI0W9nvK2insqlsKacw",
+        "apple_music": "https://music.apple.com/us/album/small-talk-bonus-tracks-edition-2007-remaster/216551719",
+        "youtube_music": "https://music.youtube.com/search?q=Sly+The+Family+Stone+Small+Talk",
+        "tidal": "https://tidal.com/browse/album/1277555",
+        "amazon_music": "https://music.amazon.com/albums/B00138H9MA"
+      }
+    },
+    {
       "date": "2026-08-17",
       "artist": "Van Morrison",
       "title": "Moondance",
