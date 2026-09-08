@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-09-07",
+      "artist": "Traffic",
+      "title": "Mr. Fantasy",
+      "year": 1967,
+      "image": "https://i.scdn.co/image/ab67616d0000b273607f5d1d15bdb8a450840ccf",
+      "url": "https://npyati.github.io/universalmusiclink/traffic-mr-fantasy/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/0tAMTTxU0e84QFhrNhQNIT",
+        "apple_music": "https://music.apple.com/us/album/mr-fantasy/1444064385",
+        "youtube_music": "https://music.youtube.com/search?q=Traffic+Mr+Fantasy",
+        "tidal": "https://tidal.com/browse/album/2528553",
+        "amazon_music": "https://music.amazon.com/albums/B00FLLVF98"
+      }
+    },
+    {
       "date": "2026-08-18",
       "artist": "Sly & The Family Stone",
       "title": "Small Talk",
