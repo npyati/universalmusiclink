@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-09-08",
+      "artist": "The Womack Sisters",
+      "title": "The Womack Sisters",
+      "year": 2026,
+      "image": "https://i.scdn.co/image/ab67616d0000b273afa44cba895ec03a35a27778",
+      "url": "https://npyati.github.io/universalmusiclink/the-womack-sisters-the-womack-sisters/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/7DM9ZgCLCWorHqBB1GsjRh",
+        "apple_music": "https://music.apple.com/us/album/the-womack-sisters/1892924754",
+        "youtube_music": "https://music.youtube.com/search?q=The+Womack+Sisters+The+Womack+Sisters",
+        "tidal": "https://tidal.com/browse/album/515388445",
+        "amazon_music": "https://music.amazon.com/albums/B0GWZ39N85"
+      }
+    },
+    {
       "date": "2026-09-07",
       "artist": "Traffic",
       "title": "Mr. Fantasy",
