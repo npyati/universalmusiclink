@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-09-16",
+      "artist": "ESG",
+      "title": "Come Away with ESG",
+      "year": 1983,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d036ac6c871f61bfe851cc81",
+      "url": "https://npyati.github.io/universalmusiclink/esg-come-away-with-esg/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4DX4hNQbCQnrDMlmKq3eid",
+        "apple_music": "https://music.apple.com/us/album/come-away-with-esg/1668437008",
+        "youtube_music": "https://music.youtube.com/search?q=ESG+Come+Away+with+ESG",
+        "tidal": "https://tidal.com/browse/album/273231331",
+        "amazon_music": "https://music.amazon.com/albums/B0BT8DFMZ7"
+      }
+    },
+    {
       "date": "2026-09-08",
       "artist": "The Womack Sisters",
       "title": "The Womack Sisters",
