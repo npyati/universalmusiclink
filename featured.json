@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-09-17",
+      "artist": "Queen",
+      "title": "A Day at the Races",
+      "year": 1976,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730e4750544a3395dd2fe500b5",
+      "url": "https://npyati.github.io/universalmusiclink/queen-a-day-at-the-races/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/3hfcNo7WWy1Z1ie0nJ8PRy",
+        "apple_music": "https://music.apple.com/us/album/a-day-at-the-races/6781023113",
+        "youtube_music": "https://music.youtube.com/search?q=Queen+A+Day+at+the+Races",
+        "tidal": "https://tidal.com/browse/album/534050501",
+        "amazon_music": "https://music.amazon.com/albums/B0H5MHX161"
+      }
+    },
+    {
       "date": "2026-09-16",
       "artist": "ESG",
       "title": "Come Away with ESG",
