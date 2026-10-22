@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-10-22",
+      "artist": "Jon Batiste",
+      "title": "Black Mozart",
+      "year": 2026,
+      "image": "https://i.scdn.co/image/ab67616d0000b273611944cc4e08f4faba82891d",
+      "url": "https://npyati.github.io/universalmusiclink/jon-batiste-black-mozart/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4pw6vv5tS2sbpgKjwVS7l5",
+        "apple_music": "https://music.apple.com/us/album/black-mozart/1895866355",
+        "youtube_music": "https://music.youtube.com/search?q=Jon+Batiste+Black+Mozart",
+        "tidal": "https://tidal.com/browse/album/549947229",
+        "amazon_music": "https://music.amazon.com/albums/B0GYZW61PP"
+      }
+    },
+    {
       "date": "2026-09-21",
       "artist": "Gorillaz",
       "title": "Demon Days",
