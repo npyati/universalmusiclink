@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-10-23",
+      "artist": "Oscar Peterson Trio",
+      "title": "Night Train",
+      "year": 1963,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732d26415891712d356e615098",
+      "url": "https://npyati.github.io/universalmusiclink/oscar-peterson-trio-night-train/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4gPYH4cFOgaukEpzcAr7vw",
+        "apple_music": "https://music.apple.com/us/album/night-train/1440761118",
+        "youtube_music": "https://music.youtube.com/search?q=Oscar+Peterson+Trio+Night+Train",
+        "tidal": "https://tidal.com/browse/album/230581102",
+        "amazon_music": "https://music.amazon.com/albums/B0845WJHT8"
+      }
+    },
+    {
       "date": "2026-10-22",
       "artist": "Jon Batiste",
       "title": "Black Mozart",
