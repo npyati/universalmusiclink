@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-10-26",
+      "artist": "David Bowie",
+      "title": "\"Heroes\"",
+      "year": 1977,
+      "image": "https://i.scdn.co/image/ab67616d0000b273204f41d52743c6a9efd62985",
+      "url": "https://npyati.github.io/universalmusiclink/david-bowie-heroes/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/4I5zzKYd2SKDgZ9DRf5LVk",
+        "apple_music": "https://music.apple.com/us/album/heroes-2017-remaster/1347894082",
+        "youtube_music": "https://music.youtube.com/search?q=David+Bowie+Heroes",
+        "tidal": "https://tidal.com/browse/album/84556443",
+        "amazon_music": "https://music.amazon.com/albums/B079R7C2XC"
+      }
+    },
+    {
       "date": "2026-10-25",
       "artist": "George Harrison",
       "title": "All Things Must Pass",
