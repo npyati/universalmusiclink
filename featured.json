@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-10-25",
+      "artist": "George Harrison",
+      "title": "All Things Must Pass",
+      "year": 1970,
+      "image": "https://i.scdn.co/image/ab67616d0000b27349f30585cbff243517dd83d7",
+      "url": "https://npyati.github.io/universalmusiclink/george-harrison-all-things-must-pass/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/1EFOYsAkyfwLkS5OPfobak",
+        "apple_music": "https://music.apple.com/us/album/all-things-must-pass-50th-anniversary/1666662415",
+        "youtube_music": "https://music.youtube.com/search?q=George+Harrison+All+Things+Must+Pass",
+        "tidal": "https://tidal.com/browse/album/497879170",
+        "amazon_music": "https://music.amazon.com/albums/B0DZSY4WB4"
+      }
+    },
+    {
       "date": "2026-10-23",
       "artist": "Oscar Peterson Trio",
       "title": "Night Train",
