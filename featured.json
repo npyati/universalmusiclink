@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-11-15",
+      "artist": "Tame Impala",
+      "title": "Deadbeat",
+      "year": 2025,
+      "image": "https://i.scdn.co/image/ab67616d0000b273208500450dcd0fd294d7bd3b",
+      "url": "https://npyati.github.io/universalmusiclink/tame-impala-deadbeat/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/5WulAOx9ilWy1h8UGZ1gkI",
+        "apple_music": "https://music.apple.com/us/album/deadbeat/1836226516",
+        "youtube_music": "https://music.youtube.com/search?q=Tame+Impala+Deadbeat",
+        "tidal": "https://tidal.com/browse/album/466933846",
+        "amazon_music": "https://music.amazon.com/albums/B0FPGPMHS5"
+      }
+    },
+    {
       "date": "2026-10-26",
       "artist": "David Bowie",
       "title": "\"Heroes\"",
