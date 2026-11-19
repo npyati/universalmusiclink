@@ -1,6 +1,21 @@
 {
   "schedule": [
     {
+      "date": "2026-11-19",
+      "artist": "Alice Phoebe Lou",
+      "title": "Glow",
+      "year": 2021,
+      "image": "https://i.scdn.co/image/ab67616d0000b273b5f4f9f835ade82d83085b07",
+      "url": "https://npyati.github.io/universalmusiclink/alice-phoebe-lou-glow/",
+      "services": {
+        "spotify": "https://open.spotify.com/album/1XWbqIpeAqKBxZWy9PeeBN",
+        "apple_music": "https://music.apple.com/us/album/glow/1803458767",
+        "youtube_music": "https://music.youtube.com/search?q=Alice+Phoebe+Lou+Glow",
+        "tidal": "https://tidal.com/browse/album/425258752",
+        "amazon_music": "https://music.amazon.com/albums/B0F22NM17W"
+      }
+    },
+    {
       "date": "2026-11-15",
       "artist": "Tame Impala",
       "title": "Deadbeat",
